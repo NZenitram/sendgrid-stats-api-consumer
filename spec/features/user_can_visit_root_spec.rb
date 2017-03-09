@@ -5,7 +5,6 @@ describe 'a user can visit root' do
 
     visit '/'
 
-    expect(page).to have_content("Welcom")
-
+    expect(page).to have_content("Welcome")
   end
 end
