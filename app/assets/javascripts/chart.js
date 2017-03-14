@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   // $.get('https://s3-us-west-1.amazonaws.com/spamgrid/sends_data.csv', function(csv) {
+  //   debugger
   //     $('#container').highcharts({
   //         chart: {
   //             type: 'line'
@@ -19,13 +20,13 @@ $(document).ready(function() {
   //     });
   // });
 
-  $.ajax({
-    type: 'GET',
-    url: '/get_file',
-    success: function(data){
-      debugger
-    }
-  })
+  // $.ajax({
+  //   type: 'GET',
+  //   url: '/get_file',
+  //   success: function(data){
+  //     debugger
+  //   }
+  // })
 
 
 });

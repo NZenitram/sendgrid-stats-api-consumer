@@ -15,7 +15,7 @@ module Response
   end
 
   def self.create_header(providers)
-    file = "#{Time.now}"
+    file = "XYZ"
     header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     CSV.open(file, "wb") do |csv|
       csv << header
@@ -42,22 +42,5 @@ module Response
     end
   end
 
-  def self.parse_csv(provider)
-    title = provider.titleize
-    search_criteria = {"provider" => title}
-    CSV.open("./tmp/test_data", "r", :headers => true) do |csv|
-      matches = csv.find_all do |row|
-        match = true
-        search_criteria.keys.each do |key|
-          match = match && ( row[key] == search_criteria[key])
-        end
-        match
-      end
-    end
-  end
-
-  def self.testing(provider)
-    binding.pry
-    parse_csv(provider)
-  end
+  
 end
