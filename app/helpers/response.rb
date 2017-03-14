@@ -1,7 +1,6 @@
 require 'csv'
 
 module Response
-
   def self.response
     conn = Faraday::Connection.new("https://api.sendgrid.com/v3/mailbox_providers/stats?start_date=2016-01-01&end_date=2017-03-03")
     conn.headers['Authorization'] = "Bearer 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"
@@ -42,5 +41,10 @@ module Response
     end
   end
 
-  
+  def self.inbox_providers
+    csv = CSV.read("./tmp/#{XYZ}", :headers => true)
+    inbox = csv['provider']
+    email_providers = inbox.uniq
+  end
+
 end

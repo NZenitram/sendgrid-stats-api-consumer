@@ -1,3 +1,5 @@
+require 'csv'
+
 module ParsingProviders
   def self.parse_csv(provider)
     title = provider.titleize
