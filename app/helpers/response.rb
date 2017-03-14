@@ -1,4 +1,5 @@
 require 'csv'
+
 module Response
 
   def self.response
@@ -44,7 +45,7 @@ module Response
   def self.parse_csv(provider)
     title = provider.titleize
     search_criteria = {"provider" => title}
-    CSV.open("./tmp/test_data.csv", "r", :headers => true) do |csv|
+    CSV.open("./tmp/test_data", "r", :headers => true) do |csv|
       matches = csv.find_all do |row|
         match = true
         search_criteria.keys.each do |key|
@@ -55,7 +56,8 @@ module Response
     end
   end
 
-  def self.to_json(provider)
+  def self.testing(provider)
+    binding.pry
     parse_csv(provider)
   end
 end

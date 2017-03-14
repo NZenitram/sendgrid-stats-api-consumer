@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       resources :providers, only: [:show], param: :slug
     end
   end
+
 end

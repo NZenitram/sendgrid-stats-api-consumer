@@ -1,23 +1,33 @@
 $(document).ready(function() {
 
-  $.get('../tmp/test_data.csv', function(csv) {
-    debugger
-    $('#container').highcharts({
-        chart: {
-            type: 'column'
-        },
-        data: {
-            csv: csv
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        yAxis: {
-            title: {
-                text: 'Units'
-            }
-        }
-    });
+  // $.get('https://s3-us-west-1.amazonaws.com/spamgrid/sends_data.csv', function(csv) {
+  //     $('#container').highcharts({
+  //         chart: {
+  //             type: 'line'
+  //         },
+  //         data: {
+  //             csv: csv
+  //         },
+  //         title: {
+  //             text: 'Events'
+  //         },
+  //         yAxis: {
+  //             title: {
+  //                 text: 'Units'
+  //             }
+  //         }
+  //     });
+  // });
+
+  $.ajax({
+    type: 'GET',
+    url: '/get_file',
+    success: function(data){
+      debugger
+    }
+  })
+
+
 });
   // Highcharts.chart('container', {
   //     title: {
@@ -65,4 +75,3 @@ $(document).ready(function() {
   //         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
   //     }]
   // });
-});
