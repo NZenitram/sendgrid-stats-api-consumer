@@ -1,6 +1,7 @@
 class Api::V1::ProvidersController < ApplicationController
 
   def show
-    binding.pry
+    @provider = Response.to_json(params[:slug])
+    render json: @exercises, status: 200
   end
 end
