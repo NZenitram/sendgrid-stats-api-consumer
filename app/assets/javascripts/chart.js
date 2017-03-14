@@ -1,5 +1,24 @@
 $(document).ready(function() {
 
+  $.get('../tmp/test_data.csv', function(csv) {
+    debugger
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        data: {
+            csv: csv
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        yAxis: {
+            title: {
+                text: 'Units'
+            }
+        }
+    });
+});
   // Highcharts.chart('container', {
   //     title: {
   //         text: 'Monthly Average Temperature',

@@ -32,10 +32,12 @@ li:last-child a {
 
 li:last-child a:hover {
   background-color: transparent;
+  color: transparent;
 }
 
 li a:hover {
   background-color: #294661;
+  color: white;
 }
 
 .active {
