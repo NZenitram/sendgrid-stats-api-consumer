@@ -1,7 +1,8 @@
 class Api::V1::ProvidersController < ApplicationController
 
   def show
-    @response = File.read('./tmp/Hotmail')
+    filename = params["slug"]
+    @response = File.read("./tmp/#{filename}")
     render json: {thing: @response}
   end
 end
