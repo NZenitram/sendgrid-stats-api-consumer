@@ -38,7 +38,7 @@ module ParsingProviders
   end
 
   def self.recreate_csv(table, title)
-    header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
+    header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
 
     CSV.open("./tmp/#{title}", 'wb', :headers => true) do |csv|
       csv << header

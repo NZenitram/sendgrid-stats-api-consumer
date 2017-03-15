@@ -4,7 +4,7 @@ $('.nav-links').on('click', function(){
   debugger
 })
 
-$.get('/api/v1/providers/gmail', function(csv) {
+$.get('http://localhost:3000/api/v1/providers/gmail', function(csv) {
       $('#container').highcharts({
           chart: {
               type: 'line'
