@@ -42,7 +42,7 @@ module Response
   end
 
   def self.inbox_providers
-    csv = CSV.read("./tmp/#{XYZ}", :headers => true)
+    csv = CSV.read("./tmp/test_data", :headers => true)
     inbox = csv['provider']
     email_providers = inbox.uniq
   end

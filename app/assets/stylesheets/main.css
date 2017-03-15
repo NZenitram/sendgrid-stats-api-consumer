@@ -11,6 +11,9 @@
   border-top: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
 }
+.nav-links {
+  color: black;
+}
 
 li a {
   padding: 14px 16px;
@@ -42,4 +45,8 @@ li a:hover {
 
 .active {
     background-color: #4CAF50;
+}
+
+#dropdown1 {
+  color: black;
 }

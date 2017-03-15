@@ -1,24 +1,23 @@
 $(document).ready(function() {
 
-  // $.get('https://s3-us-west-1.amazonaws.com/spamgrid/sends_data.csv', function(csv) {
-  //   debugger
-  //     $('#container').highcharts({
-  //         chart: {
-  //             type: 'line'
-  //         },
-  //         data: {
-  //             csv: csv
-  //         },
-  //         title: {
-  //             text: 'Events'
-  //         },
-  //         yAxis: {
-  //             title: {
-  //                 text: 'Units'
-  //             }
-  //         }
-  //     });
-  // });
+  $.get('https://s3-us-west-1.amazonaws.com/spamgrid/sends_data.csv', function(csv) {
+      $('#container').highcharts({
+          chart: {
+              type: 'line'
+          },
+          data: {
+              csv: csv
+          },
+          title: {
+              text: 'Events'
+          },
+          yAxis: {
+              title: {
+                  text: 'Units'
+              }
+          }
+      });
+  });
 
   // $.ajax({
   //   type: 'GET',
