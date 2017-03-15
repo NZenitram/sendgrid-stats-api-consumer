@@ -9,6 +9,9 @@ class HomeController < ApplicationController
   end
 
   def search
-    binding.pry
+    key = params["client-id"]
+    start_date = DateHelper.correct_date(params["datepicker-start"])
+    end_date = DateHelper.correct_date(params["datepicker-end"])
+    Response.response(start_date, end_date, key)
   end
 end

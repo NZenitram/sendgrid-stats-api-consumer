@@ -4,7 +4,7 @@
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <%= form_tag("/dates", method: "post") do %>
-  Client ID: <%= text_field_tag('client-it') %>
+  Client ID: <%= text_field_tag('client-id') %>
   Start Date: <%= text_field_tag('datepicker-start', nil, placeholder: 'mm/dd/yyyy') %>
   End Date: <%= text_field_tag('datepicker-end', nil, placeholder: 'mm/dd/yyyy') %>
 
