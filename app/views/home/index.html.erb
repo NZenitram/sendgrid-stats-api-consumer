@@ -1,3 +1,12 @@
 
-
+<div id="api-token">
+</div>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<%= form_tag("/dates", method: "post") do %>
+  Client ID: <%= text_field_tag('client-it') %>
+  Start Date: <%= text_field_tag('datepicker-start') %>
+  End Date: <%= text_field_tag('datepicker-end') %>
+
+  <%= submit_tag("Fetch!") %>
+<% end  %>

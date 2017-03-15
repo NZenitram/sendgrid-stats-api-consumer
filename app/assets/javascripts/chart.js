@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  function readTextFile(file) {
+
+  }
+
   $.get('https://s3-us-west-1.amazonaws.com/spamgrid/sends_data.csv', function(csv) {
       $('#container').highcharts({
           chart: {
@@ -18,6 +22,15 @@ $(document).ready(function() {
           }
       });
   });
+
+  $(function() {
+    $("#datepicker-start").datepicker();
+  });
+
+  $(function() {
+    $("#datepicker-end").datepicker();
+  });
+
 
   // $.ajax({
   //   type: 'GET',

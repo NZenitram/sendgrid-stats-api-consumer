@@ -1,6 +1,7 @@
 <ul class="nav-main">
-  <li><a href="" class="nav-links">Home</a></li>
-  <li><a href="" class="nav-links">Clients</a></li>
-  <li><a href="" class="nav-links">Providers</a></li>
+  <li><a class="nav-links">Providers:</a></li>
+  <% @providers.each do |provider| %>
+  <li><a class="nav-links providers"><%= p provider %></a></li>
+  <% end %>
   <li style="float:right"><a href="index.html" class="last-li">SendGridaaaa</a></li>
 </ul>

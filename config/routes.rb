@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     end
   end
 
+  post '/dates', to: 'home#search'
 end
