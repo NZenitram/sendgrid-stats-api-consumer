@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
-  function readTextFile(file) {
+$('.nav-links').on('click', function(){
+  debugger
+})
 
-  }
-
-  $.get('https://s3-us-west-1.amazonaws.com/spamgrid/sends_data.csv', function(csv) {
+$.get('/api/v1/providers/gmail', function(csv) {
       $('#container').highcharts({
           chart: {
               type: 'line'
           },
           data: {
-              csv: csv
+              csv: csv["thing"]
           },
           title: {
               text: 'Events'

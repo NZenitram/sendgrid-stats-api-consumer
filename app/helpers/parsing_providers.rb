@@ -1,18 +1,20 @@
 require 'csv'
 
 module ParsingProviders
-  def self.parse_csv(provider)
-    title = provider.titleize
-    search_criteria = {"provider" => title}
-    CSV.open("./tmp/#{title}", "r", :headers => true) do |csv|
-      matches = csv.find_all do |row|
-        match = true
-        search_criteria.keys.each do |key|
-          match = match && ( row[key] == search_criteria[key])
+  def self.parse_csv(email_providers)
+    email_providers.each do |provider|
+      title = provider.titleize
+      search_criteria = {"provider" => title}
+      CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
+        matches = csv.find_all do |row|
+          match = true
+          search_criteria.keys.each do |key|
+            match = match && ( row[key] == search_criteria[key])
+          end
+          match
         end
-        match
+        save_provider(matches, title)
       end
-      save_provider(matches, title)
     end
   end
 

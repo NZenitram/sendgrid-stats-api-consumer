@@ -17,6 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'rails_12factor'
 gem 'faraday'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug', platform: :mri

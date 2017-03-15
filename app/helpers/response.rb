@@ -2,7 +2,7 @@ require 'csv'
 
 module Response
   def self.response
-    conn = Faraday::Connection.new("https://api.sendgrid.com/v3/mailbox_providers/stats?start_date=2016-01-01&end_date=2017-03-03")
+    conn = Faraday::Connection.new("https://api.sendgrid.com/v3/mailbox_providers/stats?start_date=2016-12-01&end_date=2017-03-03")
     conn.headers['Authorization'] = "Bearer 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"
     parse_reponse(conn)
   end
@@ -14,9 +14,9 @@ module Response
   end
 
   def self.create_header(providers)
-    file = "XYZ"
+    file = "response_csv"
     header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-    CSV.open(file, "wb") do |csv|
+    CSV.open("./tmp/#{file}", "wb") do |csv|
       csv << header
     end
     gather_data(providers, file)
@@ -36,15 +36,16 @@ module Response
   end
 
   def self.append_csv(clean_data, file)
-    CSV.open(file, "ab") do |csv|
+    CSV.open("./tmp/#{file}", "ab") do |csv|
       csv << clean_data
     end
   end
 
   def self.inbox_providers
-    csv = CSV.read("./tmp/test_data", :headers => true)
+    csv = CSV.read("./tmp/response_csv", :headers => true)
     inbox = csv['provider']
     email_providers = inbox.uniq
+    ParsingProviders.parse_csv(email_providers)
   end
 
 end
