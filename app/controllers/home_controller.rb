@@ -13,5 +13,6 @@ class HomeController < ApplicationController
     start_date = DateHelper.correct_date(params["datepicker-start"])
     end_date = DateHelper.correct_date(params["datepicker-end"])
     Response.response(start_date, end_date, key)
+    redirect_to root_path
   end
 end

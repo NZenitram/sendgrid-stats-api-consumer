@@ -50,3 +50,7 @@ li a:hover {
 #dropdown1 {
   color: black;
 }
+
+#container {
+  width: 75%;
+}
