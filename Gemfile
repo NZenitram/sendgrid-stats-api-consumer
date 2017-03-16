@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'rails_12factor'
+gem 'faraday'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'babel-transpiler'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -24,6 +27,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 group :development do
