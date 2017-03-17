@@ -1,5 +1,5 @@
 <div id='main-container'>
-  <div id="provider-side-bar">
+  <div id="provider-side-bar" class="inline-display">
     <ul id="side-provider">
       <li id="prov-heading"><b>Providers:</b></li>
       <% @providers.each do |provider| %>
@@ -7,11 +7,11 @@
       <% end %>
     </ul>
   </div>
-  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+  <div id="container" class="inline-display" style="min-width: 310px; height: 400px; margin: 0 auto">
   </div>
 </div>
 
-  <div id="input-fields"
+  <div id="input-fields">
     <%= form_tag("/dates", method: "post") do %>
       Client ID: <%= text_field_tag('client-id') %>
       Start Date: <%= text_field_tag('datepicker-start', nil, placeholder: 'mm/dd/yyyy') %>
