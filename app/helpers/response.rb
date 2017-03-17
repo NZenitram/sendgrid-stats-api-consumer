@@ -11,6 +11,7 @@ module Response
   def self.parse_reponse(conn)
     response = conn.get
     providers = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
     create_header(providers)
   end
 
