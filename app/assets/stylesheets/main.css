@@ -40,6 +40,7 @@
 
 #provider-side-bar {
   width: 125px;
+  position: absolute;
 }
 
 li a {
@@ -79,4 +80,9 @@ li a:hover {
 
 #container {
   width: 75%;
+  padding-left: 215px;
+}
+
+#side-provider {
+
 }
