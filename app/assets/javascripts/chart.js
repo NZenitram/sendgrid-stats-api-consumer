@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('.nav-links').on('click', function(){
+  $('.prov-links').on('click', function(){
     $.ajax({
       url: "/api/v1/providers/" + this.innerText,
       type: 'GET',

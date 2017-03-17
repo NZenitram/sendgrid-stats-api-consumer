@@ -15,10 +15,36 @@
   color: black;
 }
 
+#prov-heading {
+  list-style-type: none;
+  text-align: center;
+}
+
+#main-container {
+  display: inline-block;
+}
+
+.prov-links {
+  list-style-type: none;
+  padding-top: 15px;
+  text-decoration: none;
+  color: #1A82E2;
+  vertical-align: top;
+  text-align: center;
+}
+
+.prov-links:hover {
+  background-color: #294661;
+  color: white;
+}
+
+#provider-side-bar {
+  width: 125px;
+}
+
 li a {
   padding: 14px 16px;
   float: left;
-  display: inline-block;
   text-decoration: none;
   color: #1A82E2;
   vertical-align: top;
