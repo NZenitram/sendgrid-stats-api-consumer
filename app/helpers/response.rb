@@ -67,16 +67,47 @@ module Response
     header_values = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     event_totals = []
     csv = CSV.read("./tmp/global_csv", :headers => true)
-    header_values.each do |event|
-      event_sum = csv[event].map do |i|
-        i.to_i
-      end.reduce(:+)
-      event_totals << event_sum
-    end
-    CSV.open("./tmp/global_stats", 'wb', :headers => true) do |csv|
-      csv << header_values
-      csv << event_total
+    dates = csv['date']
+    dates.each do |date|
+      search_criteria = {"date" => date}
+      CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
+        matches = csv.find_all do |row|
+          match = true
+          search_criteria.keys.each do |key|
+            match = match && ( row[key] == search_criteria[key])
+          end
+          match
+        end
+        sum_event_totals(matches, date)
+      end
     end
   end
+
+  def self.sum_event_totals(matches, date)
+    events = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
+    event_hash = {}
+    matches.each do |match|
+      events.each do |event|
+        event_integer = match
+        if event_hash.keys.include?(event) == false
+          event_hash[event] = match[event]
+        elsif
+          event_hash[event] << match[event]
+        end
+      end
+    end
+    binding.pry
+  end
+
+    # header_values.each do |event|
+    #   event_sum = csv[event].map do |i|
+    #     i.to_i
+    #   end.reduce(:+)
+    #   event_totals << event_sum
+    # end
+    # CSV.open("./tmp/global_stats", 'wb', :headers => true) do |csv|
+    #   csv << header_values
+    #   csv << event_total
+    # end
 
 end
