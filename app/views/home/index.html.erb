@@ -1,21 +1,19 @@
+<div class="form">
+  <%= form_tag("/dates", method: "post", class: 'client-form') do %>
+    Client ID: <li class="li-form client-id"><%= text_field_tag('client-id') %></li>
+    Start Date: <li class="li-form form-pad"><%= text_field_tag('datepicker-start', nil, placeholder: 'mm/dd/yyyy') %></li>
+    End Date: <li class="li-form form-pad"><%= text_field_tag('datepicker-end', nil, placeholder: 'mm/dd/yyyy') %></li>
+
+  <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!") %></li>
+  <% end  %>
+</div>
 
   <div id="provider-side-bar" class="inline-display">
     <ul id="side-provider">
-      <li id="prov-heading"><b>Providers:</b></li>
       <% @providers.each do |provider| %>
       <li class="prov-links"><%= p provider %></li>
       <% end %>
     </ul>
   </div>
   <div id="container" class="inline-display" style="min-width: 310px; height: 400px; margin: 0 auto">
-  </div>
-
-  <div id="input-fields">
-    <%= form_tag("/dates", method: "post") do %>
-      Client ID: <%= text_field_tag('client-id') %>
-      Start Date: <%= text_field_tag('datepicker-start', nil, placeholder: 'mm/dd/yyyy') %>
-      End Date: <%= text_field_tag('datepicker-end', nil, placeholder: 'mm/dd/yyyy') %>
-
-      <%= submit_tag("Fetch!") %>
-    <% end  %>
   </div>

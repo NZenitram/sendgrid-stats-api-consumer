@@ -5,4 +5,5 @@ class Api::V1::ProvidersController < ApplicationController
     @response = File.read("./tmp/#{filename}")
     render json: {thing: @response}
   end
+
 end
