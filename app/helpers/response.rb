@@ -62,4 +62,20 @@ module Response
     ParsingProviders.parse_csv(email_providers)
   end
 
+  def self.reduce_global
+    header_values = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
+    event_totals = []
+    csv = CSV.read("./tmp/global_csv", :headers => true)
+    header_values.each do |event|
+      event_sum = csv[event].map do |i|
+        i.to_i
+      end.reduce(:+)
+      event_totals << event_sum
+    end
+    CSV.open("./tmp/global_stats", 'wb', :headers => true) do |csv|
+      csv << header_values
+      csv << event_totals
+    end
+  end
+
 end
