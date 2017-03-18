@@ -19,11 +19,12 @@ module Response
     file = "response_csv"
     global = "global_csv"
     header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
+    global_header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     CSV.open("./tmp/#{file}", "wb") do |csv|
       csv << header
     end
     CSV.open("./tmp/#{global}", "wb") do |csv|
-      csv << header
+      csv << global_header
     end
     gather_data(providers, file, global)
   end
@@ -74,7 +75,7 @@ module Response
     end
     CSV.open("./tmp/global_stats", 'wb', :headers => true) do |csv|
       csv << header_values
-      csv << event_totals
+      csv << event_total
     end
   end
 

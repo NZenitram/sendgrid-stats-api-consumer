@@ -11,8 +11,13 @@
   border-top: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
 }
+
 .nav-links {
   color: black;
+}
+
+.li-form {
+  display: inline;
 }
 
 #prov-heading {
@@ -84,5 +89,10 @@ li a:hover {
 }
 
 #side-provider {
+
+}
+
+#input-fields {
+  padding-top: 25px;
 
 }
