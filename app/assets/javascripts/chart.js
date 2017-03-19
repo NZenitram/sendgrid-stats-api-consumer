@@ -52,6 +52,33 @@ $(document).ready(function() {
     })
   })
 
+  $('.global').on('click', function(){
+    $.ajax({
+      url: "/api/v1/providers/global_data",
+      type: 'GET',
+      success: function(){
+        $.get(this.url, function(csv) {
+              $('#container').highcharts({
+                  chart: {
+                      type: 'line'
+                  },
+                  data: {
+                      csv: csv["thing"]
+                  },
+                  title: {
+                      text: "Global"
+                  },
+                  yAxis: {
+                      title: {
+                          text: 'Units'
+                      }
+                  }
+              });
+          });
+      }
+    })
+  });
+
   $(function() {
     $("#datepicker-start").datepicker();
   });
