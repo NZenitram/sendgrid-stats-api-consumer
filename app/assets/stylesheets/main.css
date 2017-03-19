@@ -27,17 +27,6 @@
   background-color: white;
 }
 
-#client-id {
-  width: 450px;
-}
-
-#datepicker-start {
-  width: 65px;
-}
-
-#datepicker-end {
-  width: 65px;
-}
 
 .nav-links {
   color: black;
@@ -47,10 +36,6 @@
   display: inline;
 }
 
-#prov-heading {
-  list-style-type: none;
-  text-align: center;
-}
 
 .inline-display {
   display: inline-block;
@@ -127,4 +112,21 @@ li a:hover {
 #input-fields {
   padding-top: 25px;
 
+}
+
+#client-id {
+  width: 450px;
+}
+
+#datepicker-start {
+  width: 65px;
+}
+
+#datepicker-end {
+  width: 65px;
+}
+
+#prov-heading {
+  list-style-type: none;
+  text-align: center;
 }
