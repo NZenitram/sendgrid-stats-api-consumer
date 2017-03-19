@@ -64,10 +64,15 @@ module Response
   end
 
   def self.reduce_global
+    header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
+    CSV.open("./tmp/global_without_dates", "wb", :headers => true) do |csv|
+      csv << header
+    end
     header_values = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     event_totals = []
     csv = CSV.read("./tmp/global_csv", :headers => true)
-    dates = csv['date']
+    dates_all = csv['date']
+    dates = dates_all.uniq
     dates.each do |date|
       search_criteria = {"date" => date}
       CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
@@ -78,8 +83,8 @@ module Response
           end
           match
         end
+        collect_event_totals(matches, date)
       end
-      collect_event_totals(matches, date)
     end
   end
 
@@ -95,8 +100,8 @@ module Response
           event_hash[event] << event_integer
         end
       end
-      sum_event_totals(event_hash, date)
     end
+    sum_event_totals(event_hash, date)
   end
 
   def self.sum_event_totals(event_hash, date)
@@ -105,28 +110,8 @@ module Response
       event_count = count.reduce(:+)
       daily_event << event_count
     end
-    create_global_data_with_single_dates(daily_event)
-  end
-
-  def self.create_global_data_with_single_dates(daily_event)
-    header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-    CSV.open("./tmp/global_without_dates", "wb") do |csv|
-      csv << header
-    end
-    CSV.open("./tmp/global_without_dates", "ab") do |csv|
+    CSV.open('./tmp/global_without_dates', 'ab', :headers => true) do |csv|
       csv << daily_event
     end
   end
-
-    # header_values.each do |event|
-    #   event_sum = csv[event].map do |i|
-    #     i.to_i
-    #   end.reduce(:+)
-    #   event_totals << event_sum
-    # end
-    # CSV.open("./tmp/global_stats", 'wb', :headers => true) do |csv|
-    #   csv << header_values
-    #   csv << event_total
-    # end
-
 end
