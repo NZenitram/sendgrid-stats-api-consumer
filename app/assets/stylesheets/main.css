@@ -42,12 +42,14 @@
 }
 
 .prov-links {
+  font-family: sans-serif;
   list-style-type: none;
-  padding-top: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   text-decoration: none;
   color: #1A82E2;
-  vertical-align: top;
   text-align: center;
+
 }
 
 .prov-links:hover {
@@ -55,10 +57,6 @@
   color: white;
 }
 
-#provider-side-bar {
-  width: 125px;
-  position: absolute;
-}
 
 li a {
   padding: 14px 16px;
@@ -92,11 +90,16 @@ li a:hover {
     background-color: #4CAF50;
 }
 
+#provider-side-bar {
+  width: 125px;
+  position: absolute;
+}
+
 #dropdown1 {
   color: black;
 }
 
-#container {
+.graph-data {
   width: 75%;
   padding-left: 215px;
 }
