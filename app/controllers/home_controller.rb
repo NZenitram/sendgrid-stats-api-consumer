@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @providers = Response.inbox_providers
-    @global = Response.reduce_global
+    @global = GlobalStats.reduce_global
   end
 
   def show
