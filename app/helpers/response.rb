@@ -78,25 +78,44 @@ module Response
           end
           match
         end
-        sum_event_totals(matches, date)
       end
+      collect_event_totals(matches, date)
     end
   end
 
-  def self.sum_event_totals(matches, date)
+  def self.collect_event_totals(matches, date)
     events = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     event_hash = {}
     matches.each do |match|
       events.each do |event|
-        event_integer = match
+        event_integer = match[event].to_i
         if event_hash.keys.include?(event) == false
-          event_hash[event] = match[event]
-        elsif
-          event_hash[event] << match[event]
+          event_hash[event] = [event_integer]
+        else
+          event_hash[event] << event_integer
         end
       end
+      sum_event_totals(event_hash, date)
     end
-    binding.pry
+  end
+
+  def self.sum_event_totals(event_hash, date)
+    daily_event = [date]
+    event_hash.each do |event, count|
+      event_count = count.reduce(:+)
+      daily_event << event_count
+    end
+    create_global_data_with_single_dates(daily_event)
+  end
+
+  def self.create_global_data_with_single_dates(daily_event)
+    header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
+    CSV.open("./tmp/global_without_dates", "wb") do |csv|
+      csv << header
+    end
+    CSV.open("./tmp/global_without_dates", "ab") do |csv|
+      csv << daily_event
+    end
   end
 
     # header_values.each do |event|
