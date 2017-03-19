@@ -1,65 +1,43 @@
 
 
 class GlobalStats
-  def self.sum_global_events_with_same_date
-    header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-    CSV.open("./tmp/global_without_dates", "wb", :headers => true) do |csv|
+  def self.get_global_data(start_date, end_date, key)
+    conn = Faraday::Connection.new("https://api.sendgrid.com/v3/stats?start_date=#{start_date}&end_date=#{end_date}")
+    conn.headers['Authorization'] = "Bearer #{key}"
+    parse_response(conn)
+  end
+
+  def self.parse_response(conn)
+    response = conn.get
+    dates_object = JSON.parse(response.body, symbolize_names: true)
+    create_global_stats_csv(dates_object)
+  end
+
+  def self.create_global_stats_csv(dates_object)
+    file = "global_data"
+    header = ["date", "blocks", "bounce_drops", "bounces", "clicks", "deferred", "delivered", "invalid_emails", "opens", "processed", "requests", "spam_report_drops", "spam_reports", "unique_clicks", "unique_opens", "unsubscribe_drops", "unsubscribes"]
+    CSV.open("./tmp/#{file}", "wb") do |csv|
       csv << header
     end
-    create_array_of_unique_dates
+    gather_data(dates_object, file)
   end
 
-  def self.create_array_of_unique_dates
-    csv = CSV.read("./tmp/response_csv", :headers => true)
-    dates_all = csv['date']
-    dates = dates_all.uniq
-    csv_search_criteria(dates)
-  end
-
-  def self.csv_search_criteria(dates)
-    dates.each do |date|
-      search_criteria = {"date" => date}
-      open_csv_and_set_matches(search_criteria, date)
-    end
-  end
-
-  def self.open_csv_and_set_matches(search_criteria, date)
-    CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
-      matches = csv.find_all do |row|
-        match = true
-        search_criteria.keys.each do |key|
-          match = match && ( row[key] == search_criteria[key])
-        end
-        match
-      end
-      collect_event_totals(matches, date)
-    end
-  end
-
-  def self.collect_event_totals(matches, date)
-    events = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-    event_hash = {}
-    matches.each do |match|
-      events.each do |event|
-        event_integer = match[event].to_i
-        if event_hash.keys.include?(event) == false
-          event_hash[event] = [event_integer]
-        else
-          event_hash[event] << event_integer
-        end
+  def self.gather_data(dates_object, file)
+    dates_object.each do |date|
+      date.each do |i|
+      data = []
+      data.push(date[:date])
+      data.push(date[:stats].first[:metrics].values)
+      clean_data = data.flatten
+      append_csv(clean_data, file)
       end
     end
-    sum_event_totals(event_hash, date)
   end
 
-  def self.sum_event_totals(event_hash, date)
-    daily_event = [date]
-    event_hash.each do |event, count|
-      event_count = count.reduce(:+)
-      daily_event << event_count
-    end
-    CSV.open('./tmp/global_without_dates', 'ab', :headers => true) do |csv|
-      csv << daily_event
+  def self.append_csv(clean_data, file)
+    CSV.open("./tmp/#{file}", "ab") do |csv|
+      csv << clean_data
     end
   end
+
 end

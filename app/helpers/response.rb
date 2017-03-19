@@ -11,13 +11,11 @@ module Response
   def self.parse_reponse(conn)
     response = conn.get
     providers = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
     create_header(providers)
   end
 
   def self.create_header(providers)
     file = "response_csv"
-    global = "global_csv"
     header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     CSV.open("./tmp/#{file}", "wb") do |csv|
       csv << header

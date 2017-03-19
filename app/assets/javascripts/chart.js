@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-      url: "/api/v1/providers/global_without_dates",
+      url: "/api/v1/providers/global_data",
       type: 'GET',
       success: function(){
         $.get(this.url, function(csv) {
