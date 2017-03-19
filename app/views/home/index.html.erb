@@ -11,9 +11,12 @@
   <div id="provider-side-bar" class="inline-display">
     <ul id="side-provider">
       <% @providers.each do |provider| %>
-      <li class="prov-links"><%= p provider %></li>
+      <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
       <% end %>
     </ul>
   </div>
-  <div id="container" class="inline-display" style="min-width: 310px; height: 400px; margin: 0 auto">
+
+<div id="graphs">
+  <div id="container" class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto">
   </div>
+</div>
