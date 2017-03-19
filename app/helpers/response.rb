@@ -16,7 +16,6 @@ module Response
 
   def self.create_header(providers)
     file = "response_csv"
-    global = "global_csv"
     header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     CSV.open("./tmp/#{file}", "wb") do |csv|
       csv << header
@@ -42,7 +41,7 @@ module Response
       csv << clean_data
     end
   end
-  
+
   def self.inbox_providers
     csv = CSV.read("./tmp/response_csv", :headers => true)
     inbox = csv['provider']
