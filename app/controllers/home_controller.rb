@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @providers = Response.inbox_providers
-    @global = GlobalStats.reduce_global
+    @global = GlobalStats.sum_global_events_with_same_date
   end
 
   def show

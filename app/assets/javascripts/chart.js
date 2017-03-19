@@ -12,7 +12,7 @@ $(document).ready(function() {
                       csv: csv["thing"]
                   },
                   title: {
-                      text: 'Events'
+                      text: 'Global'
                   },
                   yAxis: {
                       title: {
@@ -25,6 +25,7 @@ $(document).ready(function() {
     });
 
   $('.prov-links').on('click', function(){
+    var provider = this.innerText
     $.ajax({
       url: "/api/v1/providers/" + this.innerText,
       type: 'GET',
@@ -38,7 +39,7 @@ $(document).ready(function() {
                       csv: csv["thing"]
                   },
                   title: {
-                      text: 'Events'
+                      text: provider
                   },
                   yAxis: {
                       title: {

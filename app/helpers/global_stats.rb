@@ -1,26 +1,36 @@
 class GlobalStats
-  def self.reduce_global
+  def self.sum_global_events_with_same_date
     header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     CSV.open("./tmp/global_without_dates", "wb", :headers => true) do |csv|
       csv << header
     end
-    header_values = ["blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-    event_totals = []
+    create_array_of_unique_dates
+  end
+
+  def self.create_array_of_unique_dates
     csv = CSV.read("./tmp/response_csv", :headers => true)
     dates_all = csv['date']
     dates = dates_all.uniq
+    csv_search_criteria(dates)
+  end
+
+  def self.csv_search_criteria(dates)
     dates.each do |date|
       search_criteria = {"date" => date}
-      CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
-        matches = csv.find_all do |row|
-          match = true
-          search_criteria.keys.each do |key|
-            match = match && ( row[key] == search_criteria[key])
-          end
-          match
+      open_csv_and_set_matches(search_criteria, date)
+    end
+  end
+
+  def self.open_csv_and_set_matches(search_criteria, date)
+    CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
+      matches = csv.find_all do |row|
+        match = true
+        search_criteria.keys.each do |key|
+          match = match && ( row[key] == search_criteria[key])
         end
-        collect_event_totals(matches, date)
+        match
       end
+      collect_event_totals(matches, date)
     end
   end
 
