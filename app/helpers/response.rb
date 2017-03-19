@@ -11,6 +11,7 @@ module Response
   def self.parse_reponse(conn)
     response = conn.get
     providers = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
     create_header(providers)
   end
 
@@ -42,7 +43,7 @@ module Response
       csv << clean_data
     end
   end
-  
+
   def self.inbox_providers
     csv = CSV.read("./tmp/response_csv", :headers => true)
     inbox = csv['provider']

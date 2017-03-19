@@ -1,3 +1,5 @@
+
+
 class GlobalStats
   def self.sum_global_events_with_same_date
     header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]

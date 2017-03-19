@@ -19,6 +19,7 @@ gem 'rails_12factor'
 gem 'faraday'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'babel-transpiler'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug', platform: :mri
