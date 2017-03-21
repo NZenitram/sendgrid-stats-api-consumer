@@ -1,3 +1,7 @@
+#providers-page-header {
+  text-align: left;
+}
+
 #clear-button {
   width: 90px;
   height: 50px;
@@ -6,13 +10,22 @@
   border-bottom: 1px solid #bbb;
   border-top: 1px solid #bbb;
   position: relative;
-  top: 0px;
+  top: -98px;
   left: 125px;
   text-align: center;
   color: #1A82E2;
+  display: inline-block;
 }
 
 #clear-button:hover {
   background-color: #294661;
   color: white;
+}
+
+#providers-title {
+  padding-left: 69px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  width: 50%;
 }

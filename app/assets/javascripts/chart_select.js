@@ -37,7 +37,9 @@ var counter = 0
         })
       }
 
-  $('#clear-button').on('click', function clearGraphs(){
-    $('#graphs').children().hide()
-  })
+  $('#clear-button').on('click', clearGraphs)
 });
+
+function clearGraphs(){
+  $('#graphs').children().empty()
+}
