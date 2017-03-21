@@ -91,15 +91,6 @@ li a:hover {
     background-color: #4CAF50;
 }
 
-#provider-side-bar {
-  width: 125px;
-  height: 100%;
-  position: absolute;
-  border-right: 1px solid #bbb;
-  border-top: 1px solid #bbb;
-  border-radius: 2px;
-}
-
 #dropdown1 {
   color: black;
 }
