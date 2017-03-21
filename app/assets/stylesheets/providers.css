@@ -11,7 +11,7 @@
   border-top: 1px solid #bbb;
   position: relative;
   top: -98px;
-  left: 125px;
+  left: 145px;
   text-align: center;
   color: #1A82E2;
   display: inline-block;
@@ -28,4 +28,17 @@
   position: relative;
   text-align: center;
   width: 50%;
+}
+
+#provider-side-bar {
+  width: 145px;
+  height: 100%;
+  position: absolute;
+  border-right: 1px solid #bbb;
+  border-top: 1px solid #bbb;
+  border-radius: 2px;
+}
+
+.providerCheckBox {
+  float: right
 }

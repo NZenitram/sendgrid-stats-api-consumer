@@ -23,6 +23,6 @@ class HomeController < ApplicationController
   end
 
   def topfive
-    @providers = Response.inbox_providers
+    @providers = TopFive.find_providers
   end
 end
