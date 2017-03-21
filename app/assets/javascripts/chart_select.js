@@ -36,4 +36,8 @@ var counter = 0
           }
         })
       }
+
+  $('#clear-button').on('click', function clearGraphs(){
+    $('#graphs').children().hide()
+  })
 });

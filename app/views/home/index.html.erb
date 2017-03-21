@@ -8,15 +8,13 @@
   <% end  %>
 </div>
 
-  <div id="provider-side-bar" class="inline-display">
-    <ul id="side-provider">
-      <% @providers.each do |provider| %>
-      <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
-      <% end %>
-    </ul>
-  </div>
+<div id="provider-side-bar" class="inline-display">
+  <ul id="side-provider">
+    <li class="prov-links">Your Top Five</li>
+    <li class="prov-links"> <a href="/providers.html">View Providers</a></li>
+    <li class="prov-links"></li>
+  </ul>
+</div>
 
-<div id="graphs">
-  <div id="container" class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto">
-  </div>
+<div id="container" class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto">
 </div>

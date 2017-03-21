@@ -44,11 +44,12 @@
 .prov-links {
   font-family: sans-serif;
   list-style-type: none;
-  padding-top: 7px;
+  padding-top: 0px;
   padding-bottom: 7px;
   text-decoration: none;
   color: #1A82E2;
   text-align: center;
+  float: none;
 
 }
 
@@ -92,7 +93,11 @@ li a:hover {
 
 #provider-side-bar {
   width: 125px;
+  height: 100%;
   position: absolute;
+  border-right: 1px solid #bbb;
+  border-top: 1px solid #bbb;
+  border-radius: 2px;
 }
 
 #dropdown1 {
@@ -102,10 +107,6 @@ li a:hover {
 .graph-data {
   width: 85%;
   padding-left: 165px;
-}
-
-#side-provider {
-
 }
 
 #input-fields {
@@ -128,4 +129,8 @@ li a:hover {
 #prov-heading {
   list-style-type: none;
   text-align: center;
+}
+
+#side-provider {
+  padding: 0;
 }

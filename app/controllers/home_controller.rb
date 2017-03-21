@@ -15,6 +15,10 @@ class HomeController < ApplicationController
     end_date = DateHelper.correct_date(params["datepicker-end"])
     Response.response(start_date, end_date, key)
     GlobalStats.get_global_data(start_date, end_date, key)
-    redirect_to root_path
+    redirect_to global_path
+  end
+
+  def providers
+    @providers = Response.inbox_providers
   end
 end
