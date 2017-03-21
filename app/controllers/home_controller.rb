@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_filter :disable_nav, only: [:welcome]
 
   def index
     @providers = Response.inbox_providers

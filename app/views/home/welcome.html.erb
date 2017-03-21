@@ -1,0 +1,15 @@
+<div id=welcome-header>
+  <h1><img class="sg-logo" src="/assets/SG-Logomark.png" /><a id="header-a">Welcome To SendGrid Stats</a></h1>
+</div>
+
+<div class="form">
+  <h4> Enter Your API Key:</h4>
+  <%= form_tag("/dates", method: "post", class: 'client-form') do %>
+    Client ID: <li class="li-form client-id"><%= text_field_tag('client-id') %></li>
+  <h4>Select Your Date Range:</h4>
+    Start Date: <li class="li-form form-pad"><%= text_field_tag('datepicker-start', nil, placeholder: 'mm/dd/yyyy') %></li>
+    End Date: <li class="li-form form-pad"><%= text_field_tag('datepicker-end', nil, placeholder: 'mm/dd/yyyy') %></li>
+
+  <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!") %></li>
+  <% end  %>
+</div>
