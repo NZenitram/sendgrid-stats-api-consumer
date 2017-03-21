@@ -10,7 +10,7 @@ function appendGraphs(){
   clearGraphs()
  var checked = $('.providerCheckBox:checkbox:checked')
    for (var i = 0; i < checked.length; i++) {
-     var provider = checked[i].parentElement.innerText
+     var provider = checked[i].parentElement.innerText.replace(/\s+/g, '');
      $("#graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
      populateGraphs(provider)
    }

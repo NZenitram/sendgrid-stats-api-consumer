@@ -18,7 +18,8 @@ module ParsingProviders
     end
   end
 
-  def self.save_provider(matches, title)
+  def self.save_provider(matches, bad_title)
+    title = bad_title.delete(' ')
     header = ["date", "provider", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
     CSV.open("./tmp/#{title}", 'wb', :headers => true) do |csv|
       csv << header
