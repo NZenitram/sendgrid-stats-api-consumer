@@ -1,5 +1,7 @@
 # SendGrid Consumer API Visualization
 
+![Home](http://imgur.com/PNwLpqb)
+
 The SendGrid API Visualization application allows a SendGrid client to enter their API key into the Client ID field, select a date range, and see a visual representation of the email events that occurred on a per provider basis.
 
 ## Getting Started
