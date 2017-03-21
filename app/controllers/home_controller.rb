@@ -21,4 +21,8 @@ class HomeController < ApplicationController
   def providers
     @providers = Response.inbox_providers
   end
+
+  def topfive
+    @providers = Response.inbox_providers
+  end
 end
