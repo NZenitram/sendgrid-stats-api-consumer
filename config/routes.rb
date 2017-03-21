@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  root to: 'home#welcome'
+
+  get '/global', to: 'home#index'
+  get '/providers', to: 'home#providers'
 
   namespace :api do
     namespace :v1 do

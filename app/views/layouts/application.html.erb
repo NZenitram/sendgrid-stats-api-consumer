@@ -20,7 +20,7 @@
 
   <body>
     <div id="main-body">
-      <%= render partial: 'layouts/navbar' %>
+      <%= render partial: 'layouts/navbar' unless @disable_nav %>
       <%= yield %>
     </div>
   </body>
