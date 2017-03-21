@@ -29,11 +29,9 @@ If you don't have rails (or ruby) installed, this [tutorial](http://docs.railsbr
 
 Run the test suite using RSpec. 
 
-### Break down into end to end tests
+### The Future
 
-```
-I still need to build out unit testing for the CSV builder and formatter.
-```
+I wish to continue the style out the interface and make it more user friendly. Rate percentages will also be added to make consuming the data more clear and easier to understand. The current API calls and data parsing take a while, and is done on each page reload. I will work on persisting the data per session so when the key is entered, it only needs to work through the response once per client. 
 
 ## Deployment
 
