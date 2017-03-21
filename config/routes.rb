@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/global', to: 'home#index'
   get '/providers', to: 'home#providers'
-
+  get '/top-five', to: 'home#topfive'
   namespace :api do
     namespace :v1 do
       resources :providers, only: [:show], param: :slug
