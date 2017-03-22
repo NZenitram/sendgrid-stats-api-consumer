@@ -1,6 +1,14 @@
 require 'csv'
 
 module ParsingProviders
+
+  def self.get_providers
+    csv = CSV.read("./tmp/response_csv", :headers => true)
+    inbox = csv['provider']
+    email_providers = inbox.uniq
+    parse_csv(email_providers)
+  end
+
   def self.parse_csv(email_providers)
     email_providers.each do |provider|
       title = provider
