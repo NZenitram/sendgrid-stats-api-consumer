@@ -14,8 +14,9 @@
   top: -98px;
   left: 145px;
   text-align: center;
-  color: #1A82E2;
   display: inline-block;
+  background-color: #1A82E2;
+  color: white;
 }
 
 #clear-button:hover {
@@ -33,11 +34,15 @@
 
 #provider-side-bar {
   width: 145px;
-  height: 100%;
+  height: inherit;
   position: absolute;
   border-right: 1px solid #bbb;
   border-top: 1px solid #bbb;
   border-radius: 2px;
+}
+
+#center-button {
+  padding-left: 20px;
 }
 
 .providerCheckBox {
