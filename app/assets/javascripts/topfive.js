@@ -1,7 +1,6 @@
 $(document).ready(function() {
   appendTopFive()
-  $('#clear-button').on('click', clearGraphs)
-  $('.multiple-providers').on('click', appendGraphs)
+
 });
 
 function appendTopFive(){
@@ -12,16 +11,6 @@ function appendTopFive(){
     $("#top-five-graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
     populateGraphs(provider)
   }
-}
-
-function appendGraphs(){
-  clearGraphs()
- var checked = $('.providerCheckBox:checkbox:checked')
-   for (var i = 0; i < checked.length; i++) {
-     var provider = checked[i].parentElement.innerText.replace(/[^a-zA-Z0-9]/g, '');
-     $("#top-five-graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
-     populateGraphs(provider)
-   }
 }
 
 function populateGraphs(provider){

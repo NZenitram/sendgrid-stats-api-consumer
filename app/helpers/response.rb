@@ -46,6 +46,5 @@ module Response
     csv = CSV.read("./tmp/response_csv", :headers => true)
     inbox = csv['provider']
     email_providers = inbox.uniq
-    ParsingProviders.parse_csv(email_providers)
   end
 end
