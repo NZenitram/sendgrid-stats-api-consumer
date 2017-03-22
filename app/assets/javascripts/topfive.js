@@ -1,23 +1,27 @@
 $(document).ready(function() {
-var counter = 0
-  $('.multiple-providers').on('click', appendGraphs)
-
+  appendTopFive()
   $('#clear-button').on('click', clearGraphs)
+  $('.multiple-providers').on('click', appendGraphs)
 });
 
+function appendTopFive(){
+  var providers = $('#side-provider .prov-links')
+  for (var i = 0; i < providers.length; i++) {
+
+    var provider = providers[i].innerText.replace(/[^a-zA-Z0-9]/g, '');
+    $("#top-five-graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
+    populateGraphs(provider)
+  }
+}
 
 function appendGraphs(){
   clearGraphs()
  var checked = $('.providerCheckBox:checkbox:checked')
    for (var i = 0; i < checked.length; i++) {
      var provider = checked[i].parentElement.innerText.replace(/[^a-zA-Z0-9]/g, '');
-     $("#graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
+     $("#top-five-graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
      populateGraphs(provider)
    }
-}
-
-function clearGraphs(){
-  $('#graphs').children().remove()
 }
 
 function populateGraphs(provider){
@@ -47,3 +51,7 @@ function populateGraphs(provider){
         }
       })
     }
+
+function clearGraphs(){
+  $('#top-five-graphs').children().remove()
+}

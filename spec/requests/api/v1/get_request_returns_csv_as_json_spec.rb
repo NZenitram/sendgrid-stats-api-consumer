@@ -5,6 +5,6 @@ describe 'GET api/v1/:provider' do
 
     get "/api/v1/providers/gmail"
 
-
+    expect(response).to be_success
   end
 end
