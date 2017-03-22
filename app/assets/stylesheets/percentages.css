@@ -1,0 +1,38 @@
+#percentages-label {
+  width: 90px;
+  height: 25px;
+  border-radius: 2px;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-top: 1px solid #bbb;
+  position: relative;
+  top: 0px;
+  left: 168px;
+  background-color: #1A82E2;
+  color: white;
+  text-align: center;
+}
+
+#percentages-number {
+  width: 90px;
+  height: 25px;
+  border-radius: 2px;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-top: 1px solid #bbb;
+  position: relative;
+  top: 0px;
+  left: 168px;
+  background-color: #1A82E2;
+  color: white;
+  text-align: center;
+}
+
+#events-blocks {
+  display: inline-flex;
+}
+
+.percentages-text {
+  vertical-align: middle;
+  line-height: normal;
+}
