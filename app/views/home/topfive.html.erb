@@ -3,7 +3,6 @@
     <% @providers.each do |provider| %>
     <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
     <% end %>
-    <li><button class="multiple-providers" type="button" href="#">Get Provider Stats</button></li>
   </ul>
 </div>
 
@@ -12,7 +11,10 @@
     <h1>Top Five Providers by Delivered E-Mails</h1>
     <p>(Select domains on the left)</p>
   </div>
-  <div id="clear-button">
+  <div id="provider-button" class="top-five-providers">
+    <p>Get Providers</p>
+  </div>
+  <div id="clear-top-five-button">
     <p>Clear</p>
   </div>
 </div>
