@@ -2,7 +2,7 @@ require 'csv'
 
 class TopFive
   def self.find_providers
-    data = CSV.read('./tmp/raw_response.csv', :headers => true, :converters => :integer)
+    data = CSV.read('./tmp/response_csv', :headers => true, :converters => :integer)
     sorted_by_deliveries = data.sort_by {|row| row["delivered"]}.reverse
     top_five = {}
     sorted_by_deliveries.each do |row|
