@@ -19,20 +19,10 @@ module ProviderPercentages
     end
   end
 
-  # def self.create_percentage_csv(title, providers_hash)
-  #   header = ["date", "clicks", "delivered", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-  #   title.each do |title|
-  #     CSV.open("./tmp/#{title}_percent", 'wb', :headers => true) do |csv|
-  #       csv << header
-  #     end
-  #   end
-  #   reduce_events(title, providers_hash)
-  # end
-
   def self.reduce_events
     providers_hash = {}
     title = ProviderPercentages.get_providers
-    provider_data_map = title.map do |title|
+    title.map do |title|
       provider_data = CSV.read("./tmp/#{title}", headers: true, converters: :integer)
       total_delivered = provider_data["delivered"].reduce(:+).to_f
       total_clicks = provider_data["clicks"].reduce(:+).to_f
@@ -62,5 +52,9 @@ module ProviderPercentages
   def self.create_providers_hash(title, event_types, event_percentages, providers_hash)
     hash = Hash[event_types.zip event_percentages]
     providers_hash.merge!(title => hash)
+  end
+
+  def self.single_provider_percentages(percentage_hash, provider)
+    percentage_hash.fetch(provider)
   end
 end
