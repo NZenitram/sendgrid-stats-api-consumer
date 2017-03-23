@@ -58,4 +58,10 @@ $(document).ready(function() {
   $(function() {
     $("#datepicker-end").datepicker();
   });
+
+  appendTopFive()
+  $('.top-five-providers').on('click', appendGraphsTopFive)
+  $('#clear-top-five-button').on('click', clearTopGraphs)
+  $('.multiple-providers').on('click', appendGraphs)
+  $('#clear-button').on('click', clearGraphs)
 });
