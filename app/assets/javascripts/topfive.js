@@ -12,6 +12,7 @@ function appendGraphsTopFive(){
      + '<div id="opens"><div id="percentages-label"><span class="percentages-text">Opens</span></div><div id="percentages-number"><span class="opens'+ provider +'"></span></div></div>'
      + '<div id="clicks"><div id="percentages-label"><span class="percentages-text">Clicks</span></div><div id="percentages-number"><span class="clicks'+ provider +'"></span></div></div></div>')
      populateGraphs(provider)
+     populatePercentages(provider)
    }
 }
 
@@ -25,6 +26,7 @@ function appendTopFive(){
     + '<div id="opens"><div id="percentages-label"><span class="percentages-text">Opens</span></div><div id="percentages-number"><span class="opens'+ provider +'"></span></div></div>'
     + '<div id="clicks"><div id="percentages-label"><span class="percentages-text">Clicks</span></div><div id="percentages-number"><span class="clicks'+ provider +'"></span></div></div></div>')
     populateGraphs(provider)
+    populatePercentages(provider)
   }
 }
 
