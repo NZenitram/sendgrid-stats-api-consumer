@@ -6,4 +6,10 @@ class Api::V1::ProvidersController < ApplicationController
     render json: {thing: @response}
   end
 
+  def percentage
+    percentage_hash = ProviderPercentages.reduce_events
+    @provider_percentages = ProviderPercentages.single_provider_percentages(percentage_hash, params["provider"])
+    render json: {events: @provider_percentages}
+  end
+
 end

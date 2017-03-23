@@ -58,4 +58,7 @@ $(document).ready(function() {
   $(function() {
     $("#datepicker-end").datepicker();
   });
+
+  $('.multiple-providers').on('click', appendGraphs)
+  $('#clear-button').on('click', clearGraphs)
 });

@@ -32,7 +32,7 @@ module ParsingProviders
     CSV.open("./tmp/#{title}", 'wb', :headers => true) do |csv|
       csv << header
     end
-    CSV.open("./tmp/#{title}", 'ab', :headers => true) do |csv|
+    CSV.open("./tmp/#{title}", 'ab', :headers => true, converters: :integer) do |csv|
       matches.each do |row|
         csv << row
       end

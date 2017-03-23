@@ -1,3 +1,11 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.top-five-providers').on('click', appendGraphsTopFive)
+    $('#clear-top-five-button').on('click', clearTopGraphs)
+    appendTopFive()
+  });
+</script>
+
 <div id="provider-side-bar" class="inline-display">
   <ul id="side-provider">
     <% @providers.each do |provider| %>
