@@ -16,6 +16,7 @@ class HomeController < ApplicationController
     Response.response(start_date, end_date, key)
     GlobalStats.get_global_data(start_date, end_date, key)
     ParsingProviders.get_providers
+    DailyPercentages.get_providers
     redirect_to global_path
   end
 

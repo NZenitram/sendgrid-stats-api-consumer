@@ -53,17 +53,17 @@ module DailyPercentages
       click_percentage = (click_events / delivered_events).round(5) * 100
       spam_percentage = (spam_events / delivered_events).round(5) * 100
       prov_percent << date
-      prov_percent << delivered_events
       prov_percent << open_percentage.round(2)
       prov_percent << click_percentage.round(2)
       prov_percent << spam_percentage.round(2)
     end
-    days = prov_percent.each_slice(5).to_a
+    days = prov_percent.each_slice(4).to_a
     recreate_csv(table, title, days)
   end
 
   def self.recreate_csv(table, title, days)
-    header = ["date", "delivered", "opens", "clicks", "spam"]
+    days.pop
+    header = ["date", "opens", "clicks", "spam"]
     CSV.open("./tmp/#{title}_percent", 'wb', :headers => true) do |csv|
       csv << header
     end
