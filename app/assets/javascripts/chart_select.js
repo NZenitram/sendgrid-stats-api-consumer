@@ -2,7 +2,6 @@ $(document).ready(function() {
 
 });
 
-
 function appendGraphs(){
   clearGraphs()
  var checked = $('.providerCheckBox:checkbox:checked')
