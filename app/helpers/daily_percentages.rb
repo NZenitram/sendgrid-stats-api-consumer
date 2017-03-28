@@ -54,17 +54,17 @@ module DailyPercentages
       spam_percentage = (spam_events / delivered_events).round(5) * 100
       prov_percent << date
       if (open_percentage.is_a?(Float) && open_percentage.nan?)
-        prov_percent << 0
+        prov_percent << 0.0
       else
         prov_percent << open_percentage.round(2)
       end
       if (click_percentage.is_a?(Float) && click_percentage.nan?)
-        prov_percent << 0
+        prov_percent << 0.0
       else
         prov_percent << click_percentage.round(2)
       end
       if (spam_percentage.is_a?(Float) && click_percentage.nan?)
-        prov_percent << 0
+        prov_percent << 0.0
       else
         prov_percent << spam_percentage.round(2)
       end
