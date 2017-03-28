@@ -53,20 +53,20 @@ module DailyPercentages
       click_percentage = (click_events / delivered_events).round(5) * 100
       spam_percentage = (spam_events / delivered_events).round(5) * 100
       prov_percent << date
-      if open_percentage.class == Float
+      if (open_percentage.is_a?(Float) && open_percentage.nan?)
+        prov_percent << 0
+      else
         prov_percent << open_percentage.round(2)
-      else
-        prov_percent << 0
       end
-      if click_percentage.class == Float
-      prov_percent << click_percentage.round(2)
-      else
+      if (click_percentage.is_a?(Float) && click_percentage.nan?)
         prov_percent << 0
+      else
+        prov_percent << click_percentage.round(2)
       end
-      if spam_percentage.class == Float
+      if (spam_percentage.is_a?(Float) && click_percentage.nan?)
+        prov_percent << 0
+      else
         prov_percent << spam_percentage.round(2)
-      else
-        prov_percent << 0
       end
     end
     days = prov_percent.each_slice(4).to_a
