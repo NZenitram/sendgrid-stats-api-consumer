@@ -88,4 +88,8 @@ class FindPercentage
   def percentage
     (@event / @deliveries).round(5) * 100
   end
+
+  def self.not_a_number?(event)
+
+  end
 end
