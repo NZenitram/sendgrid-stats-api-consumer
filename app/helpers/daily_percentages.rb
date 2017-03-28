@@ -45,17 +45,17 @@ module DailyPercentages
       click_percentage = FindPercentage.new(click_events, delivered_events).percentage
       spam_percentage = FindPercentage.new(spam_events, delivered_events).percentage
       prov_percent << date
-      if (open_percentage.is_a?(Float) && open_percentage.nan?)
+      if FindPercentage.not_a_number?(open_percentage)
         prov_percent << 0.0
       else
         prov_percent << open_percentage.round(2)
       end
-      if (click_percentage.is_a?(Float) && click_percentage.nan?)
+      if FindPercentage.not_a_number?(click_percentage)
         prov_percent << 0.0
       else
         prov_percent << click_percentage.round(2)
       end
-      if (spam_percentage.is_a?(Float) && click_percentage.nan?)
+      if FindPercentage.not_a_number?(spam_percentage)
         prov_percent << 0.0
       else
         prov_percent << spam_percentage.round(2)
@@ -90,6 +90,6 @@ class FindPercentage
   end
 
   def self.not_a_number?(event)
-
+    (event.is_a?(Float) && event.nan?)
   end
 end
