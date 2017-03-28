@@ -1,20 +1,8 @@
 require 'csv'
 
 module ProviderPercentages
-
-  def self.get_providers
-    csv = CSV.read("./tmp/response_csv", :headers => true)
-    get_unique_providers(csv)
-  end
-
-  def self.get_unique_providers(csv)
-    inbox = csv['provider']
-    email_providers = inbox.uniq
-    select_provider_csv(email_providers)
-  end
-
   def self.select_provider_csv(email_providers)
-    title = email_providers.map do |bad_title|
+    title = Response.inbox_providers.map do |bad_title|
       bad_title.delete('&''.'' ')
     end
   end

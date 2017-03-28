@@ -1,15 +1,7 @@
 require 'csv'
 module DailyPercentages
-
-  def self.get_providers
-    csv = CSV.read("./tmp/response_csv", :headers => true)
-    inbox = csv['provider']
-    email_providers = inbox.uniq
-    parse_csv(email_providers)
-  end
-
-  def self.parse_csv(email_providers)
-    email_providers.each do |provider|
+  def self.parse_csv
+    Response.inbox_providers.each do |provider|
       title = provider
       search_criteria = {"provider" => title}
       CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
@@ -49,9 +41,9 @@ module DailyPercentages
       open_events = row["opens"].to_f
       click_events = row["clicks"].to_f
       spam_events = row["spam_reports"].to_f
-      open_percentage = (open_events / delivered_events).round(5) * 100
-      click_percentage = (click_events / delivered_events).round(5) * 100
-      spam_percentage = (spam_events / delivered_events).round(5) * 100
+      open_percentage = FindPercentage.new(open_events, delivered_events).percentage
+      click_percentage = FindPercentage.new(click_events, delivered_events).percentage
+      spam_percentage = FindPercentage.new(spam_events, delivered_events).percentage
       prov_percent << date
       if (open_percentage.is_a?(Float) && open_percentage.nan?)
         prov_percent << 0.0
@@ -84,5 +76,16 @@ module DailyPercentages
         csv << day
       end
     end
+  end
+end
+
+class FindPercentage
+  def initialize(event, deliveries)
+    @event = event
+    @deliveries = deliveries
+  end
+
+  def percentage
+    (@event / @deliveries).round(5) * 100
   end
 end
