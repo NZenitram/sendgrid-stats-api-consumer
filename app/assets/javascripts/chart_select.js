@@ -40,7 +40,7 @@ function populateGraphs(provider){
                   },
                   yAxis: {
                       title: {
-                          text: 'Units'
+                          text: 'Events'
                       }
                   }
               });
@@ -83,7 +83,7 @@ function populatePercentGraphs(provider){
                   },
                   yAxis: {
                       title: {
-                          text: 'Units'
+                          text: 'Percent'
                       }
                   }
               });
