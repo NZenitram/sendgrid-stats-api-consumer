@@ -1,7 +1,7 @@
 require 'csv'
 
 module ProviderPercentages
-  def self.select_provider_csv(email_providers)
+  def self.select_provider_csv
     title = Response.inbox_providers.map do |bad_title|
       bad_title.delete('&''.'' ')
     end
@@ -10,7 +10,7 @@ module ProviderPercentages
   def self.reduce_events
     providers_hash = {}
     event_types = ["spam", "open_percentage", "click_percentage", "unique_opens_percentage", "unique_clicks_percentage"]
-    title = ProviderPercentages.get_providers
+    title = ProviderPercentages.select_provider_csv
      title.each do |title|
       provider_data = CSV.read("./tmp/#{title}", headers: true, converters: :integer)
       total_delivered = provider_data["delivered"].reduce(:+).to_f
