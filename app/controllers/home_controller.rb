@@ -15,8 +15,8 @@ class HomeController < ApplicationController
     end_date = DateHelper.correct_date(params["datepicker-end"])
     Response.response(start_date, end_date, key)
     GlobalStats.get_global_data(start_date, end_date, key)
-    ParsingProviders.get_providers
-    DailyPercentages.get_providers
+    ParsingProviders.parse_csv
+    DailyPercentages.parse_csv
     redirect_to global_path
   end
 
