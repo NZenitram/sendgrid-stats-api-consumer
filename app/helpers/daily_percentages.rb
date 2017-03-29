@@ -34,13 +34,26 @@ module DailyPercentages
   def self.delete_provider(title)
     table = CSV.read("./tmp/#{title}_percent", :headers => true, converters: :integer)
     table.delete('provider')
-    prov_percent = []
+    separate_events(table, title)
+  end
+
+  def self.separate_events(table, title)
+    header = ["date", "opens", "clicks", "spam"]
+    CSV.open("./tmp/#{title}_percent", 'wb', :headers => true) do |csv|
+      csv << header
+    end
     table.each do |row|
       date = row["date"]
       delivered_events = row["delivered"].to_f
       open_events = row["opens"].to_f
       click_events = row["clicks"].to_f
       spam_events = row["spam_reports"].to_f
+      calculate_percentages(table, title, date, delivered_events, open_events, click_events, spam_events)
+    end
+  end
+
+  def self.calculate_percentages(table, title, date, delivered_events, open_events, click_events, spam_events)
+      prov_percent = []
       open_percentage = FindPercentage.new(open_events, delivered_events).percentage
       click_percentage = FindPercentage.new(click_events, delivered_events).percentage
       spam_percentage = FindPercentage.new(spam_events, delivered_events).percentage
@@ -60,21 +73,12 @@ module DailyPercentages
       else
         prov_percent << spam_percentage.round(2)
       end
-    end
-    days = prov_percent.each_slice(4).to_a
-    recreate_csv(table, title, days)
+    recreate_csv(table, title, prov_percent)
   end
 
-  def self.recreate_csv(table, title, days)
-    days.pop
-    header = ["date", "opens", "clicks", "spam"]
-    CSV.open("./tmp/#{title}_percent", 'wb', :headers => true) do |csv|
-      csv << header
-    end
+  def self.recreate_csv(table, title, prov_percent)
     CSV.open("./tmp/#{title}_percent", 'ab', :headers => true) do |csv|
-      days.each do |day|
-        csv << day
-      end
+        csv << prov_percent
     end
   end
 end
@@ -90,6 +94,6 @@ class FindPercentage
   end
 
   def self.not_a_number?(event)
-    (event.is_a?(Float) && event.nan?)
+    (event.is_a?(Float) && event.nan? || event == Float::INFINITY)
   end
 end
