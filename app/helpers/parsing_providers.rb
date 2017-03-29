@@ -1,16 +1,8 @@
 require 'csv'
 
 module ParsingProviders
-
-  def self.get_providers
-    csv = CSV.read("./tmp/response_csv", :headers => true)
-    inbox = csv['provider']
-    email_providers = inbox.uniq
-    parse_csv(email_providers)
-  end
-
-  def self.parse_csv(email_providers)
-    email_providers.each do |provider|
+  def self.parse_csv
+    Response.inbox_providers.each do |provider|
       title = provider
       search_criteria = {"provider" => title}
       CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
@@ -48,11 +40,9 @@ module ParsingProviders
 
   def self.recreate_csv(table, title)
     header = ["date", "blocks", "bounces", "clicks", "deferred", "delivered", "drops", "opens", "spam_reports", "unique_clicks", "unique_opens"]
-
     CSV.open("./tmp/#{title}", 'wb', :headers => true) do |csv|
       csv << header
     end
-
     CSV.open("./tmp/#{title}", 'ab', :headers => true) do |csv|
       table.each do |row|
         csv << row

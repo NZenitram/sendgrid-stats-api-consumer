@@ -1,15 +1,7 @@
 require 'csv'
 module DailyPercentages
-
-  def self.get_providers
-    csv = CSV.read("./tmp/response_csv", :headers => true)
-    inbox = csv['provider']
-    email_providers = inbox.uniq
-    parse_csv(email_providers)
-  end
-
-  def self.parse_csv(email_providers)
-    email_providers.each do |provider|
+  def self.parse_csv
+    Response.inbox_providers.each do |provider|
       title = provider
       search_criteria = {"provider" => title}
       CSV.open("./tmp/response_csv", "r", :headers => true) do |csv|
@@ -42,47 +34,66 @@ module DailyPercentages
   def self.delete_provider(title)
     table = CSV.read("./tmp/#{title}_percent", :headers => true, converters: :integer)
     table.delete('provider')
-    prov_percent = []
+    separate_events(table, title)
+  end
+
+  def self.separate_events(table, title)
+    header = ["date", "opens", "clicks", "spam"]
+    CSV.open("./tmp/#{title}_percent", 'wb', :headers => true) do |csv|
+      csv << header
+    end
     table.each do |row|
       date = row["date"]
       delivered_events = row["delivered"].to_f
       open_events = row["opens"].to_f
       click_events = row["clicks"].to_f
       spam_events = row["spam_reports"].to_f
-      open_percentage = (open_events / delivered_events).round(5) * 100
-      click_percentage = (click_events / delivered_events).round(5) * 100
-      spam_percentage = (spam_events / delivered_events).round(5) * 100
+      calculate_percentages(table, title, date, delivered_events, open_events, click_events, spam_events)
+    end
+  end
+
+  def self.calculate_percentages(table, title, date, delivered_events, open_events, click_events, spam_events)
+      prov_percent = []
+      open_percentage = FindPercentage.new(open_events, delivered_events).percentage
+      click_percentage = FindPercentage.new(click_events, delivered_events).percentage
+      spam_percentage = FindPercentage.new(spam_events, delivered_events).percentage
       prov_percent << date
-      if (open_percentage.is_a?(Float) && open_percentage.nan?)
+      if FindPercentage.not_a_number?(open_percentage)
         prov_percent << 0.0
       else
         prov_percent << open_percentage.round(2)
       end
-      if (click_percentage.is_a?(Float) && click_percentage.nan?)
+      if FindPercentage.not_a_number?(click_percentage)
         prov_percent << 0.0
       else
         prov_percent << click_percentage.round(2)
       end
-      if (spam_percentage.is_a?(Float) && click_percentage.nan?)
+      if FindPercentage.not_a_number?(spam_percentage)
         prov_percent << 0.0
       else
         prov_percent << spam_percentage.round(2)
       end
-    end
-    days = prov_percent.each_slice(4).to_a
-    recreate_csv(table, title, days)
+    recreate_csv(table, title, prov_percent)
   end
 
-  def self.recreate_csv(table, title, days)
-    days.pop
-    header = ["date", "opens", "clicks", "spam"]
-    CSV.open("./tmp/#{title}_percent", 'wb', :headers => true) do |csv|
-      csv << header
-    end
+  def self.recreate_csv(table, title, prov_percent)
     CSV.open("./tmp/#{title}_percent", 'ab', :headers => true) do |csv|
-      days.each do |day|
-        csv << day
-      end
+        csv << prov_percent
     end
+  end
+end
+
+class FindPercentage
+  def initialize(event, deliveries)
+    @event = event
+    @deliveries = deliveries
+  end
+
+  def percentage
+    (@event / @deliveries).round(5) * 100
+  end
+
+  def self.not_a_number?(event)
+    (event.is_a?(Float) && event.nan? || event == Float::INFINITY)
   end
 end
