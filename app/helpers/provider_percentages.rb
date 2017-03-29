@@ -19,11 +19,11 @@ module ProviderPercentages
       total_spam_reports = provider_data["spam_reports"].reduce(:+).to_f
       total_unique_clicks = provider_data["unique_clicks"].reduce(:+).to_f
       total_unique_opens = provider_data["unique_opens"].reduce(:+).to_f
-      spam = (total_spam_reports / total_delivered).round(5) * 100
-      opens = (total_opens / total_delivered).round(5) * 100
-      clicks = (total_clicks / total_delivered).round(5) * 100
-      unique_opens = (total_unique_opens / total_delivered).round(5) * 100
-      unique_clicks = (total_unique_clicks / total_delivered).round(5) * 100
+      spam = FindPercentage.new(total_spam_reports, total_delivered).percentage
+      opens = FindPercentage.new(total_opens, total_delivered).percentage
+      clicks = FindPercentage.new(total_clicks, total_delivered).percentage
+      unique_opens = FindPercentage.new(total_unique_opens, total_delivered).percentage
+      unique_clicks = FindPercentage.new(total_unique_clicks, total_delivered).percentage
       event_percentages = [spam, opens, clicks, unique_opens, unique_clicks]
       hash = Hash[event_types.zip event_percentages]
       providers_hash.merge!(title => hash)
