@@ -12,7 +12,31 @@
   <div id="clear-button">
     <p>Clear</p>
   </div>
-  <div id="change-client">
-    <p>Change Client</p>
+  <button id="change-client">Change Client</button>
+  <div id="myModal" class="modal">
+    <div class="modal-content" class="modal">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <div id=welcome-header>
+          <h1><img class="sg-logo" src="/assets/SG-Logomark.png" /><p id="header-a">Welcome To SendGrid Stats</p></h1>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="form">
+          <h4> Enter Your API Key:</h4>
+          <%= form_tag("/dates", method: "post", class: 'client-form') do %>
+            Client ID: <li class="li-form client-id"><%= text_field_tag('client-id') %></li>
+          <h4>Select Your Date Range:</h4>
+            Start Date: <li class="li-form form-pad"><%= text_field_tag('datepicker-start', nil, placeholder: 'mm/dd/yyyy') %></li>
+            End Date: <li class="li-form form-pad"><%= text_field_tag('datepicker-end', nil, placeholder: 'mm/dd/yyyy') %></li>
+
+          <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!") %></li>
+          <% end  %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
   </div>
 </div>
