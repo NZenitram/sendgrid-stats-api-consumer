@@ -87,6 +87,27 @@
   color: white;
 }
 
+#change-client {
+  width: 100px;
+  height: 50px;
+  border-radius: 2px;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-top: 1px solid #bbb;
+  position: relative;
+  top: -98px;
+  left: 145px;
+  text-align: center;
+  display: inline-block;
+  background-color: #1A82E2;
+  color: white;
+}
+
+#change-client:hover {
+  background-color: #294661;
+  color: white;
+}
+
 #providers-title {
   padding-left: 69px;
   margin: auto;
