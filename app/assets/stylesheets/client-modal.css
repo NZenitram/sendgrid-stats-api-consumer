@@ -38,17 +38,23 @@
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: white;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #DCDCDC;
+    color: black;
 }
 
 /* Modal Body */
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 2px 16px;
+  padding-bottom: 40px;
+}
 
 /* Modal Footer */
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #1A82E2;
     color: white;
 }
 
@@ -76,4 +82,15 @@
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
+}
+
+#welcome-header-modal {
+  text-align: center;
+  height: 75%;
+  width: 100%;
+  padding-bottom: 55px;
+}
+
+.modal-header-modal {
+  height: 250px;
 }
