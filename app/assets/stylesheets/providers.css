@@ -49,12 +49,11 @@
 
 #provider-button {
   font-family: "Proxima Nova", Helvetica, sans-serif;
-  width: 110px;
+  width: 55px;
   height: 50px;
-  border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 165px;
+  left: 100px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -71,12 +70,11 @@
 
 #percentage-button {
   font-family: "Proxima Nova", Helvetica, sans-serif;
-  width: 100px;
+  width: 55px;
   height: 50px;
-  border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 165px;
+  left: 95px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -94,22 +92,23 @@
 #change-client {
   font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 14px;
-  width: 110px;
+  width: 75px;
   height: 50px;
   border-radius: 2px;
   border: none;
   position: relative;
-  top: -100px;
-  left: 165px;
+  margin-left: 20px;
+  top: -164px;
+  float: left;
   text-align: center;
   display: inline-block;
-  background-color: #1A82E2;
+  background: no-repeat center/100% url('/assets/user_switch-white.png');
   color: white;
 }
 
 #change-client:hover {
+  background: no-repeat center/100% url('/assets/user_switch_invert.png');
   background-color: #294661;
-  color: white;
   -webkit-transition: background-color 500ms linear;
   -ms-transition: background-color 500ms linear;
   transition: background-color 500ms linear;
