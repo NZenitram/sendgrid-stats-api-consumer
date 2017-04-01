@@ -8,10 +8,15 @@
   background-color: #1A82E2;
   box-shadow:none;
   border-radius: 1px;
+  color: white;
 }
 
 .fetch-data:hover {
   background-color: #294661;
+  color: white;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
 }
 
 #datepicker-start {
@@ -82,5 +87,5 @@
 }
 
 textarea:focus, input:focus{
-    outline: none;
+  outline: none;
 }
