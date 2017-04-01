@@ -2,7 +2,6 @@
   width: 90px;
   height: 25px;
   position: relative;
-  border-right: 1px solid #bbb;
   top: 0px;
   left: 168px;
   background-color: #294661;
@@ -13,8 +12,6 @@
 #percentages-number {
   width: 90px;
   height: 25px;
-  border-radius: 2px;
-  border-right: 1px solid #bbb;
   position: relative;
   top: 0px;
   left: 168px;

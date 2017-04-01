@@ -2,6 +2,61 @@
   width: 8%;
 }
 
+.fetch-data {
+  margin-left: 25px;
+  border: 0;
+  background-color: #1A82E2;
+  box-shadow:none;
+  border-radius: 1px;
+  color: white;
+}
+
+.fetch-data:hover {
+  background-color: #294661;
+  color: white;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+#datepicker-start {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  display: block;
+  width: 75px;
+  margin-left: 25px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 24px;
+  color: #294661;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #d4dadf;
+  box-shadow: transparent 0 1px 0;
+  transition: 0.3s border-color, 0.3s box-shadow;
+  display: inline;
+}
+
+#datepicker-end {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  display: block;
+  width: 75px;
+  padding: 0;
+  margin-left: 25px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #294661;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #d4dadf;
+  box-shadow: transparent 0 1px 0;
+  transition: 0.3s border-color, 0.3s box-shadow;
+  display: inline;
+}
+
 #welcome-header {
   text-align: center;
   width: 100%;
@@ -11,5 +66,26 @@
 #header-a {
   position: relative;
   margin-bottom: 50px;
+}
 
+#client-id {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  display: block;
+  width: 550px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 24px;
+  color: #294661;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #d4dadf;
+  box-shadow: transparent 0 1px 0;
+  transition: 0.3s border-color, 0.3s box-shadow;
+  display: inline;
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }
