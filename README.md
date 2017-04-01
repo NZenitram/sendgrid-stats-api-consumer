@@ -1,8 +1,9 @@
 # SendGrid Consumer API Visualization
 
 ![Landing](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+Landing+BLess.png)
-![Change Client](https://s3-us-west-1.amazonaws.com/github-readme-iamges/Change+Client.png)
 ![Providers](https://s3-us-west-1.amazonaws.com/github-readme-iamges/InboxProviders.png)
+![Change Client](https://s3-us-west-1.amazonaws.com/github-readme-iamges/Change+Client.png)
+
 
 
 The SendGrid API Visualization application allows a SendGrid client to enter their API key into the Client ID field, select a date range, and see a visual representation of the email events that occurred on a per provider basis.
