@@ -2,6 +2,18 @@
   width: 8%;
 }
 
+.fetch-data {
+  margin-left: 25px;
+  border: 0;
+  background-color: #1A82E2;
+  box-shadow:none;
+  border-radius: 1px;
+}
+
+.fetch-data:hover {
+  background-color: #294661;
+}
+
 #datepicker-start {
   font-family: "Proxima Nova", Helvetica, sans-serif;
   font-style: normal;
