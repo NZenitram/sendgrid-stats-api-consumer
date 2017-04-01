@@ -59,8 +59,18 @@ $(document).ready(function() {
     $("#datepicker-end").datepicker();
   });
 
-  $('.multiple-providers').on('click', appendGraphs)
+  $('.multiple-providers').on('click', appendGraphs, setActive)
   $('#clear-button').on('click', clearGraphs)
-  $('.multiple-providers-percent').on('click', appendPercentGraphs)
+  $('.multiple-providers-percent').on('click', appendPercentGraphs, setActive)
   $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
+
+function setActive(){
+  if (this.id == "provider-button") {
+    $('#percentage-button').removeClass('active');
+    $('#provider-button').addClass('active');
+  } else if (this.id == 'percentage-button') {
+    $('#provider-button').removeClass('active');
+    $('#percentage-button').addClass('active');
+  }
+}
 });

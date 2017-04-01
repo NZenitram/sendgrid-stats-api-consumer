@@ -56,8 +56,8 @@
   left: 100px;
   text-align: center;
   display: inline-block;
-  background-color: #1A82E2;
-  color: white;
+  background-color: white;
+  color: #1A82E2;
 }
 
 #provider-button:hover {
@@ -77,8 +77,8 @@
   left: 95px;
   text-align: center;
   display: inline-block;
-  background-color: #1A82E2;
-  color: white;
+  background-color: white;
+  color: #1A82E2;
 }
 
 #percentage-button:hover {
@@ -88,6 +88,7 @@
   -ms-transition: background-color 500ms linear;
   transition: background-color 500ms linear;
 }
+
 
 #change-client {
   font-family: "Proxima Nova", Helvetica, sans-serif;
@@ -131,4 +132,9 @@
 
 .providerCheckBox {
   float: right
+}
+
+#providers-page-header .active {
+  background-color: #1A82E2;
+  color: white;
 }
