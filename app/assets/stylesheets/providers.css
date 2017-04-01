@@ -10,7 +10,7 @@
   border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 145px;
+  left: 165px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -29,7 +29,7 @@
   border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 145px;
+  left: 165px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -48,7 +48,7 @@
   border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 145px;
+  left: 165px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -67,7 +67,7 @@
   border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 145px;
+  left: 165px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -88,7 +88,7 @@
   border: none;
   position: relative;
   top: -100px;
-  left: 145px;
+  left: 165px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -112,8 +112,6 @@
   width: 145px;
   height: inherit;
   position: absolute;
-  border-right: 1px solid #bbb;
-  border-top: 1px solid #bbb;
   border-radius: 2px;
 }
 
