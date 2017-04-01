@@ -4,12 +4,10 @@
 }
 
 #clear-button {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   width: 90px;
   height: 50px;
   border-radius: 2px;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-top: 1px solid #bbb;
   position: relative;
   top: -98px;
   left: 145px;
@@ -25,12 +23,10 @@
 }
 
 #clear-top-five-button {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   width: 90px;
   height: 50px;
   border-radius: 2px;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-top: 1px solid #bbb;
   position: relative;
   top: -98px;
   left: 145px;
@@ -46,12 +42,10 @@
 }
 
 #provider-button {
-  width: 100px;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  width: 110px;
   height: 50px;
   border-radius: 2px;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-top: 1px solid #bbb;
   position: relative;
   top: -98px;
   left: 145px;
@@ -67,12 +61,10 @@
 }
 
 #percentage-button {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   width: 100px;
   height: 50px;
   border-radius: 2px;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-top: 1px solid #bbb;
   position: relative;
   top: -98px;
   left: 145px;
@@ -88,14 +80,14 @@
 }
 
 #change-client {
-  width: 100px;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-size: 14px;
+  width: 110px;
   height: 50px;
   border-radius: 2px;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-top: 1px solid #bbb;
+  border: none;
   position: relative;
-  top: -98px;
+  top: -100px;
   left: 145px;
   text-align: center;
   display: inline-block;
