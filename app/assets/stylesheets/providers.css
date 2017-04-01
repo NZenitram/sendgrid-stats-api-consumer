@@ -4,17 +4,20 @@
 }
 
 #clear-button {
-  font-family: "Proxima Nova", Helvetica, sans-serif;
-  width: 90px;
+  border-top: 1px solid #1A82E2;
+  border-bottom: 1px solid #1A82E2;
+  border-left: 1px solid #1A82E2;
   height: 50px;
-  border-radius: 2px;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  width: 55px;
+  height: 50px;
   position: relative;
   top: -98px;
-  left: 165px;
+  left: 90px;
   text-align: center;
   display: inline-block;
-  background-color: #1A82E2;
-  color: white;
+  background-color: white;
+  color: #1A82E2;
 }
 
 #clear-button:hover {
@@ -48,6 +51,8 @@
 }
 
 #provider-button {
+  border-top: 1px solid #1A82E2;
+  border-bottom: 1px solid #1A82E2;
   font-family: "Proxima Nova", Helvetica, sans-serif;
   width: 55px;
   height: 50px;
@@ -69,6 +74,7 @@
 }
 
 #percentage-button {
+  border: 1px solid #1A82E2;
   font-family: "Proxima Nova", Helvetica, sans-serif;
   width: 55px;
   height: 50px;
@@ -93,8 +99,8 @@
 #change-client {
   font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 14px;
-  width: 75px;
-  height: 50px;
+  width: 80px;
+  height: 60px;
   border-radius: 2px;
   border: none;
   position: relative;
@@ -136,5 +142,8 @@
 
 #providers-page-header .active {
   background-color: #1A82E2;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
   color: white;
 }
