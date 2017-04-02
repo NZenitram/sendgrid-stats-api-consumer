@@ -1,8 +1,8 @@
 # SendGrid Consumer API Visualization
 
 ![Landing](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+Landing+BLess.png)
-![Providers](https://s3-us-west-1.amazonaws.com/github-readme-iamges/InboxProviders.png)
-![Change Client](https://s3-us-west-1.amazonaws.com/github-readme-iamges/Change+Client.png)
+![Providers](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+Prov+2.0.png)
+![Change Client](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+ChangeClient+Modal.png)
 
 
 
