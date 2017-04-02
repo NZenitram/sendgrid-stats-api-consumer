@@ -96,32 +96,6 @@
   transition: background-color 500ms linear;
 }
 
-
-/*#change-client {
-  font-family: "Proxima Nova", Helvetica, sans-serif;
-  font-size: 14px;
-  width: 80px;
-  height: 60px;
-  border-radius: 2px;
-  border: none;
-  position: relative;
-  margin-left: 20px;
-  top: -164px;
-  float: left;
-  text-align: center;
-  display: inline-block;
-  background: no-repeat center/100% url('/assets/user_switch-white.png');
-  color: white;
-}
-
-#change-client:hover {
-  background: no-repeat center/100% url('/assets/user_switch_invert.png');
-  background-color: #294661;
-  -webkit-transition: background-color 500ms linear;
-  -ms-transition: background-color 500ms linear;
-  transition: background-color 500ms linear;
-}*/
-
 #providers-title {
   padding-left: 69px;
   margin: auto;

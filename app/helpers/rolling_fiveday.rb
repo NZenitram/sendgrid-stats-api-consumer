@@ -42,14 +42,38 @@ module RollingFiveday
     CSV.open("./tmp/#{title}_fiveday", 'wb', :headers => true) do |csv|
       csv << header
     end
-    table.each do |row|
-      binding.pry
-      date = row["date"]
-      delivered_events = row["delivered"].to_f
-      open_events = row["opens"].to_f
-      click_events = row["clicks"].to_f
-      spam_events = row["spam_reports"].to_f
-      calculate_percentages(table, title, date, delivered_events, open_events, click_events, spam_events)
+    fiveday_percent = []
+    first_day = table.first(5).map {|row| row["date"]}.first
+    last_day = table.first(5).map {|row| row["date"]}.last
+    delivered_events = table.first(5).map {|row| row["delivered"]}.reduce(:+).to_f
+    open_events = table.first(5).map {|row| row["opens"]}.reduce(:+).to_f
+    click_events = table.first(5).map {|row| row["clicks"]}.reduce(:+).to_f
+    spam_events = table.first(5).map {|row| row["spam_reports"]}.reduce(:+).to_f
+    open_percentage = FindPercentage.new(open_events, delivered_events).percentage
+    click_percentage = FindPercentage.new(click_events, delivered_events).percentage
+    spam_percentage = FindPercentage.new(spam_events, delivered_events).percentage
+    prov_percent << date
+    if FindPercentage.not_a_number?(open_percentage)
+      prov_percent << 0.0
+    else
+      prov_percent << open_percentage.round(2)
+    end
+    if FindPercentage.not_a_number?(click_percentage)
+      prov_percent << 0.0
+    else
+      prov_percent << click_percentage.round(2)
+    end
+    if FindPercentage.not_a_number?(spam_percentage)
+      prov_percent << 0.0
+    else
+      prov_percent << spam_percentage.round(2)
+    end
+  recreate_csv(table, title, prov_percent)
+  end
+
+  def self.recreate_csv(table, title, prov_percent)
+    CSV.open("./tmp/#{title}_fiveday", 'ab', :headers => true) do |csv|
+        csv << prov_percent
     end
   end
 end
