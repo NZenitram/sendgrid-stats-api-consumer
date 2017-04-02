@@ -6,13 +6,12 @@
 #clear-button {
   border-top: 1px solid #1A82E2;
   border-bottom: 1px solid #1A82E2;
-  border-left: 1px solid #1A82E2;
   font-family: "Proxima Nova", Helvetica, sans-serif;
   width: 55px;
   height: 30px;
   position: relative;
   top: -98px;
-  left: 90px;
+  left: 161px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -30,7 +29,7 @@
 
 #clear-top-five-button {
   font-family: "Proxima Nova", Helvetica, sans-serif;
-  width: 90px;
+  width: 165px;
   height: 35px;
   border-radius: 2px;
   position: relative;
@@ -58,7 +57,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 100px;
+  left: 169px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -81,7 +80,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 95px;
+  left: 165px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -98,7 +97,7 @@
 }
 
 
-#change-client {
+/*#change-client {
   font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 14px;
   width: 80px;
@@ -121,7 +120,7 @@
   -webkit-transition: background-color 500ms linear;
   -ms-transition: background-color 500ms linear;
   transition: background-color 500ms linear;
-}
+}*/
 
 #providers-title {
   padding-left: 69px;
