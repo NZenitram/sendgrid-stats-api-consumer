@@ -3,5 +3,30 @@
   <li class="li-form global"><a href="/global.html">Global</a></li>
   <li class="li-form"><a href="/providers">Providers</a></li>
   <li class="li-form"><a href="/top-five.html">Top Five Providers</a></li>
+  <li id="change-client" class="li-form"><a href="#">Change Client</a></li>
   <li class="li-form" style="float:right"><a href="/" class="last-li sg-logo">SendGridaaaa</a></li>
 </ul>
+
+<!-- <button id="change-client"></button> -->
+<div id="myModal" class="modal">
+  <div class="modal-content" class="modal">
+    <div class="modal-header-modal">
+      <span class="close">&times;</span>
+      <div id=welcome-header-modal>
+        <h1><img class="sg-logo" src="/assets/SG-Logomark.png" /><p id="header-a">Welcome To SendGrid Stats</p></h1>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="form">
+        <%= form_tag("/dates", method: "post", class: 'client-form') do %>
+          <li class="li-form client-id"><%= text_field_tag('client-id', nil, placeholder: 'Enter API Key...') %></li>
+        <h4></h4>
+          <li class="li-form form-pad dates"><%= text_field_tag('datepicker-start', nil, placeholder: 'Start Date') %></li>
+          <li class="li-form form-pad dates"><%= text_field_tag('datepicker-end', nil, placeholder: 'End Date') %></li>
+
+        <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!", class: 'fetch-data') %></li>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>

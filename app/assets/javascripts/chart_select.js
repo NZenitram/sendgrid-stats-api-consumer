@@ -3,7 +3,9 @@ $(document).ready(function() {
 });
 
 function appendGraphs(){
-  clearGraphs()
+  var btn = this
+  clearGraphs();
+  setActive(btn);
  var checked = $('.providerCheckBox:checkbox:checked')
    for (var i = 0; i < checked.length; i++) {
      var provider = checked[i].parentElement.innerText.replace(/[^a-zA-Z0-9]/g, '');
@@ -17,6 +19,8 @@ function appendGraphs(){
 }
 
 function clearGraphs(){
+  var btn = this
+  setActive(btn);
   $('#graphs').children().remove()
 }
 
@@ -49,7 +53,9 @@ function populateGraphs(provider){
     }
 
 function appendPercentGraphs(){
-  clearGraphs()
+  var btn = this
+  clearGraphs();
+  setActive(btn);
  var checked = $('.providerCheckBox:checkbox:checked')
    for (var i = 0; i < checked.length; i++) {
      var provider = checked[i].parentElement.innerText.replace(/[^a-zA-Z0-9]/g, '');

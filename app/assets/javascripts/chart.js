@@ -64,3 +64,16 @@ $(document).ready(function() {
   $('.multiple-providers-percent').on('click', appendPercentGraphs)
   $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
 });
+
+function setActive(btn){
+  if (btn.id == "provider-button") {
+    $('#percentage-button').removeClass('active');
+    $('#provider-button').addClass('active');
+  } else if (btn.id == 'percentage-button') {
+    $('#provider-button').removeClass('active');
+    $('#percentage-button').addClass('active');
+  } else if (btn.id == 'clear-button') {
+    $('#percentage-button').removeClass('active');
+    $('#provider-button').removeClass('active');
+  }
+}

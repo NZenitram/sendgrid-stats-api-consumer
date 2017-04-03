@@ -4,38 +4,12 @@
     <p>(Select domains on the left)</p>
   </div>
   <div id="provider-button" class="multiple-providers">
-    <p>Get Providers</p>
+    <p>#</p>
   </div>
   <div id="percentage-button" class="multiple-providers-percent">
-    <p>Get %</p>
+    <p>%</p>
   </div>
   <div id="clear-button">
-    <p>Clear</p>
-  </div>
-  <button id="change-client">Change Client</button>
-  <div id="myModal" class="modal">
-    <div class="modal-content" class="modal">
-      <div class="modal-header-modal">
-        <span class="close">&times;</span>
-        <div id=welcome-header-modal>
-          <h1><img class="sg-logo" src="/assets/SG-Logomark.png" /><p id="header-a">Welcome To SendGrid Stats</p></h1>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="form">
-          <%= form_tag("/dates", method: "post", class: 'client-form') do %>
-            <li class="li-form client-id"><%= text_field_tag('client-id', nil, placeholder: 'Enter API Key...') %></li>
-          <h4></h4>
-            <li class="li-form form-pad dates"><%= text_field_tag('datepicker-start', nil, placeholder: 'Start Date') %></li>
-            <li class="li-form form-pad dates"><%= text_field_tag('datepicker-end', nil, placeholder: 'End Date') %></li>
-
-          <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!", class: 'fetch-data') %></li>
-          <% end  %>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <h3>SendGrid</h3>
-      </div>
-    </div>
+    <p>X</p>
   </div>
 </div>
