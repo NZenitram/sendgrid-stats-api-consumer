@@ -1,4 +1,6 @@
 require 'csv'
+require "net/http"
+require "uri"
 
 module Response
 
@@ -24,27 +26,41 @@ module Response
   end
 
   def self.gather_data(providers, file)
+    @data = []
     providers.each do |metric|
       metric[:stats].each do |i|
-        data = []
-        data.push(metric[:date])
-        data.push(i[:name])
-        data.push(i[:metrics].values)
-        clean_data = data.flatten
-        append_csv(clean_data, file)
+        provider = Provider.new(metric[:date], i[:name],
+                                i[:metrics].values[0], i[:metrics].values[1],
+                                i[:metrics].values[2], i[:metrics].values[3],
+                                i[:metrics].values[4], i[:metrics].values[5],
+                                i[:metrics].values[6], i[:metrics].values[7],
+                                i[:metrics].values[8], i[:metrics].values[9],
+                                1)
+        # data.push(metric[:date])
+        # data.push(i[:name])
+        # data.push(i[:metrics].values)
+        # clean_data = data.flatten
+        # append_csv(clean_data, file)
+        @data.push(provider)
       end
     end
+    json = @data.to_json
+    uri = URI.parse("http://localhost:3000/api/v1/providers")
+    response = Net::HTTP.post_form(uri, { "providers" => "#{json}" })
   end
 
-  def self.append_csv(clean_data, file)
-    CSV.open("./tmp/#{file}", "ab") do |csv|
-      csv << clean_data
-    end
-  end
-
+#   def self.append_csv(clean_data, file)
+#     CSV.open("./tmp/#{file}", "ab") do |csv|
+#       csv << clean_data
+#     end
+#   end
+#
   def self.inbox_providers
-    csv = CSV.read("./tmp/response_csv", :headers => true)
-    inbox = csv['provider']
-    email_providers = inbox.uniq
+    # csv = CSV.read("./tmp/response_csv", :headers => true)
+    # inbox = csv['provider']
+    # email_providers = inbox.uniq
+    uri = URI.parse("http://localhost:3000/api/v1/providers-names")
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)
   end
 end

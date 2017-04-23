@@ -6,5 +6,4 @@ module DateHelper
     new_date = date_array.unshift(year)
     new_date.join('-')
   end
-
 end
