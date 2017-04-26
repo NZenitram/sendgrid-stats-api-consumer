@@ -48,7 +48,7 @@ function globalGraph(){
 
           tooltip: {
             enabled: true,
-            pointFormat: `<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>`,
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
             valueDecimals: 2,
             // split: true,
           }
