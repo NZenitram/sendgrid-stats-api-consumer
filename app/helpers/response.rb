@@ -4,6 +4,7 @@ require "uri"
 module Response
 
   def self.response(start_date, end_date, key)
+
     conn = Faraday::Connection.new("https://api.sendgrid.com/v3/mailbox_providers/stats?start_date=#{start_date}&end_date=#{end_date}")
     conn.headers['Authorization'] = "Bearer #{key}"
     parse_reponse(conn)

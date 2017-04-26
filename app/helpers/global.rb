@@ -1,7 +1,7 @@
 class Global
-  attr_accessor :date, :blocks, :bounce_drops, :bounces, :clicks, :deferred, :delivered, :invalid_emails, :processed, :requests, :spam_report_drops, :spam_reports, :unique_clicks, :unique_opens, :unsubscribe_drops, :unsubscribes, :user_id
+  attr_accessor :date, :blocks, :bounce_drops, :bounces, :clicks, :deferred, :delivered, :opens, :invalid_emails, :processed, :requests, :spam_report_drops, :spam_reports, :unique_clicks, :unique_opens, :unsubscribe_drops, :unsubscribes, :user_id
 
-  def initialize(date, blocks, bounce_drops, bounces, clicks, deferred, delivered, invalid_emails, processed, requests, spam_report_drops, spam_reports, unique_clicks, unique_opens, unsubscribe_drops, unsubscribes, user_id)
+  def initialize(date, blocks, bounce_drops, bounces, clicks, deferred, delivered, opens, invalid_emails, processed, requests, spam_report_drops, spam_reports, unique_clicks, unique_opens, unsubscribe_drops, unsubscribes, user_id)
     @date = date
     @blocks = blocks
     @bounce_drops = bounce_drops
@@ -10,6 +10,7 @@ class Global
     @deferred = deferred
     @delivered = delivered
     @invalid_emails = invalid_emails
+    @opens = opens
     @processed = processed
     @requests = requests
     @spam_report_drops = spam_report_drops

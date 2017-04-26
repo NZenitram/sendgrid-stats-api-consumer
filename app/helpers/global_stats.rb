@@ -14,15 +14,6 @@ class GlobalStats
     gather_data(dates_object)
   end
 
-  # def self.create_global_stats_csv(dates_object)
-  #   file = "global_data"
-  #   header = ["date", "blocks", "bounce_drops", "bounces", "clicks", "deferred", "delivered", "invalid_emails", "opens", "processed", "requests", "spam_report_drops", "spam_reports", "unique_clicks", "unique_opens", "unsubscribe_drops", "unsubscribes"]
-  #   CSV.open("./tmp/#{file}", "wb") do |csv|
-  #     csv << header
-  #   end
-  #   gather_data(dates_object, file)
-  # end
-
   def self.gather_data(dates_object)
     @data = []
     dates_object.each do |date|
@@ -31,6 +22,7 @@ class GlobalStats
                             metrics[:bounce_drops], metrics[:bounces],
                             metrics[:clicks], metrics[:deferred],
                             metrics[:delivered], metrics[:invalid_emails],
+                            metrics[:opens],
                             metrics[:processed], metrics[:requests],
                             metrics[:spam_report_drops], metrics[:spam_reports],
                             metrics[:unique_clicks], metrics[:unique_opens],
@@ -43,11 +35,4 @@ class GlobalStats
     response = Net::HTTP.post_form(uri, { "globals" => "#{json}" })
 
   end
-
-  # def self.append_csv(clean_data, file)
-  #   CSV.open("./tmp/#{file}", "ab") do |csv|
-  #     csv << clean_data
-  #   end
-  # end
-
 end
