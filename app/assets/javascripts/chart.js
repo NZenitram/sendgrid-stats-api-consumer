@@ -61,7 +61,7 @@ $(document).ready(function() {
 
   $('.multiple-providers').on('click', appendGraphs)
   $('#clear-button').on('click', clearGraphs)
-  $('.multiple-providers-percent').on('click', appendPercentGraphs)
+  // $('.multiple-providers-percent').on('click', appendPercentGraphs)
   $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
 });
 

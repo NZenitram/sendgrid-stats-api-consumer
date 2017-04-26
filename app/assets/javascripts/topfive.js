@@ -45,33 +45,33 @@ function appendTopFive(){
   }
 }
 
-function populateGraphs(provider){
-    $.ajax({
-      url: "/api/v1/providers/" + provider,
-      type: 'GET',
-      success: function(){
-        var checked = $('.providerCheckBox:checkbox:checked')
-        $.get(this.url, function(csv) {
-              $('#'+ provider +'').highcharts({
-                  chart: {
-                      type: 'line'
-                  },
-                  data: {
-                      csv: csv["thing"]
-                  },
-                  title: {
-                      text: provider
-                  },
-                  yAxis: {
-                      title: {
-                          text: 'Units'
-                      }
-                  }
-              });
-          });
-        }
-      })
-    }
+// function populateGraphs(provider){
+//     $.ajax({
+//       url: "/api/v1/providers/" + provider,
+//       type: 'GET',
+//       success: function(){
+//         var checked = $('.providerCheckBox:checkbox:checked')
+//         $.get(this.url, function(csv) {
+//               $('#'+ provider +'').highcharts({
+//                   chart: {
+//                       type: 'line'
+//                   },
+//                   data: {
+//                       csv: csv["thing"]
+//                   },
+//                   title: {
+//                       text: provider
+//                   },
+//                   yAxis: {
+//                       title: {
+//                           text: 'Units'
+//                       }
+//                   }
+//               });
+//           });
+//         }
+//       })
+//     }
 
 function clearTopGraphs(){
   $('#top-five-graphs').children().remove()
