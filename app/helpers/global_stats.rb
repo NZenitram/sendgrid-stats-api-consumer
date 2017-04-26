@@ -1,4 +1,5 @@
-
+require "net/http"
+require "uri"
 
 class GlobalStats
   def self.get_global_data(start_date, end_date, key)
@@ -10,34 +11,43 @@ class GlobalStats
   def self.parse_response(conn)
     response = conn.get
     dates_object = JSON.parse(response.body, symbolize_names: true)
-    create_global_stats_csv(dates_object)
+    gather_data(dates_object)
   end
 
-  def self.create_global_stats_csv(dates_object)
-    file = "global_data"
-    header = ["date", "blocks", "bounce_drops", "bounces", "clicks", "deferred", "delivered", "invalid_emails", "opens", "processed", "requests", "spam_report_drops", "spam_reports", "unique_clicks", "unique_opens", "unsubscribe_drops", "unsubscribes"]
-    CSV.open("./tmp/#{file}", "wb") do |csv|
-      csv << header
-    end
-    gather_data(dates_object, file)
-  end
+  # def self.create_global_stats_csv(dates_object)
+  #   file = "global_data"
+  #   header = ["date", "blocks", "bounce_drops", "bounces", "clicks", "deferred", "delivered", "invalid_emails", "opens", "processed", "requests", "spam_report_drops", "spam_reports", "unique_clicks", "unique_opens", "unsubscribe_drops", "unsubscribes"]
+  #   CSV.open("./tmp/#{file}", "wb") do |csv|
+  #     csv << header
+  #   end
+  #   gather_data(dates_object, file)
+  # end
 
-  def self.gather_data(dates_object, file)
+  def self.gather_data(dates_object)
+    @data = []
     dates_object.each do |date|
-      date.each do |i|
-      data = []
-      data.push(date[:date])
-      data.push(date[:stats].first[:metrics].values)
-      clean_data = data.flatten
-      append_csv(clean_data, file)
-      end
+      metrics = date[:stats][0][:metrics]
+        global = Global.new(date[:date], metrics[:blocks],
+                            metrics[:bounce_drops], metrics[:bounces],
+                            metrics[:clicks], metrics[:deferred],
+                            metrics[:delivered], metrics[:invalid_emails],
+                            metrics[:processed], metrics[:requests],
+                            metrics[:spam_report_drops], metrics[:spam_reports],
+                            metrics[:unique_clicks], metrics[:unique_opens],
+                            metrics[:unsubscribe_drops], metrics[:unsubscribes],
+                             1)
+    @data.push(global)
     end
+    json = @data.to_json
+    uri = URI.parse("#{ENV['SENDGRID_STATS_DB_API']}/api/v1/global-stats")
+    response = Net::HTTP.post_form(uri, { "globals" => "#{json}" })
+
   end
 
-  def self.append_csv(clean_data, file)
-    CSV.open("./tmp/#{file}", "ab") do |csv|
-      csv << clean_data
-    end
-  end
+  # def self.append_csv(clean_data, file)
+  #   CSV.open("./tmp/#{file}", "ab") do |csv|
+  #     csv << clean_data
+  #   end
+  # end
 
 end
