@@ -84,7 +84,7 @@ function collectData(provider){
       seriesCounter = 0,
       names = ['delivered', 'opens', 'clicks', 'spam_reports', 'deferred', 'blocks', 'bounces', 'drops', 'unique_clicks', 'unique_opens'];
   $.each(names, function (i, name) {
-    $.getJSON("http://localhost:3001/api/v1/provider-delivered/" + provider + '/' + name, function (data) {
+    $.getJSON("https://still-spire-69165.herokuapp.com/api/v1/provider-delivered/" + provider + '/' + name, function (data) {
       seriesOptions[i] = {
         name: name,
         data: data

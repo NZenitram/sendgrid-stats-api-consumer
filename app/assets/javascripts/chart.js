@@ -56,7 +56,7 @@ function globalGraph(){
     }
 
   $.each(names, function (i, name) {
-    $.getJSON("http://localhost:3001/api/v1/global-events/" + name, function (data) {
+    $.getJSON("https://still-spire-69165.herokuapp.com/api/v1/global-events/" + name, function (data) {
       seriesOptions[i] = {
         name: name,
         data: data
