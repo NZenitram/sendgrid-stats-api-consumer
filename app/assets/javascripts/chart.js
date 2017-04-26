@@ -1,55 +1,4 @@
 $(document).ready(function() {
-  // $.ajax({
-  //   url: "/api/v1/providers/global_data",
-  //   type: 'GET',
-  //   success: function(){
-  //     $.get(this.url, function(csv) {
-  //           $('#container').highcharts({
-  //               chart: {
-  //                   type: 'line'
-  //               },
-  //               data: {
-  //                   csv: csv["thing"]
-  //               },
-  //               title: {
-  //                   text: 'Global'
-  //               },
-  //               yAxis: {
-  //                   title: {
-  //                       text: 'Units'
-  //                   }
-  //               }
-  //           });
-  //       });
-  //   }
-  // });
-  //
-  // $('.global').on('click', function(){
-  //   $.ajax({
-  //     url: "/api/v1/providers/global_data",
-  //     type: 'GET',
-  //     success: function(){
-  //       $.get(this.url, function(csv) {
-  //             $('#container').highcharts({
-  //                 chart: {
-  //                     type: 'line'
-  //                 },
-  //                 data: {
-  //                     csv: csv["thing"]
-  //                 },
-  //                 title: {
-  //                     text: "Global"
-  //                 },
-  //                 yAxis: {
-  //                     title: {
-  //                         text: 'Units'
-  //                     }
-  //                 }
-  //             });
-  //         });
-  //     }
-  //   })
-  // });
   var seriesOptions = [],
       seriesCounter = 0,
       names = ['blocks', 'bounce_drops', 'bounces', 'clicks', 'deferred', 'delivered', 'invalid_emails', 'opens', 'processed', 'requests', 'spam_report_drops', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribe_drops', 'unsubscribes'];
@@ -122,8 +71,6 @@ function globalGraph(){
 
     });
   });
-
-
 
   $(function() {
     $("#datepicker-start").datepicker();
