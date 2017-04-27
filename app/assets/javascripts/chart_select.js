@@ -21,7 +21,7 @@ function appendGraphs(){
 function clearGraphs(){
   var btn = this
   setActive(btn);
-  $('#graphs').children().remove()
+  $('#graphs').children().remove();  
 }
   /**
    * Create the chart when all data is loaded
@@ -84,7 +84,7 @@ function collectData(provider){
       seriesCounter = 0,
       names = ['delivered', 'opens', 'clicks', 'spam_reports', 'deferred', 'blocks', 'bounces', 'drops', 'unique_clicks', 'unique_opens'];
   $.each(names, function (i, name) {
-    $.getJSON("https://still-spire-69165.herokuapp.com/api/v1/provider-delivered/" + provider + '/' + name, function (data) {
+    $.getJSON("http://localhost:3000/api/v1/provider-delivered/" + provider + '/' + name, function (data) {
       seriesOptions[i] = {
         name: name,
         data: data
