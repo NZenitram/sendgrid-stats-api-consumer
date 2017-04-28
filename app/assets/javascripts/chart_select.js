@@ -9,10 +9,10 @@ function appendGraphs(){
  var checked = $('.providerCheckBox:checkbox:checked')
    for (var i = 0; i < checked.length; i++) {
      var provider = checked[i].parentElement.innerText.replace(/[^a-zA-Z0-9]/g, '');
-     $("#graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'
-     + '<div id="events-blocks"><div id="spam"><div id="percentages-label"><span class="percentages-text">Spam</span></div><div id="percentages-number"><span class="spam'+ provider +'"></span></div></div>'
-     + '<div id="opens"><div id="percentages-label"><span class="percentages-text">Opens</span></div><div id="percentages-number"><span class="opens'+ provider +'"></span></div></div>'
-     + '<div id="clicks"><div id="percentages-label"><span class="percentages-text">Clicks</span></div><div id="percentages-number"><span class="clicks'+ provider +'"></span></div></div></div>')
+     $("#graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
+    //  + '<div id="events-blocks"><div id="spam"><div id="percentages-label"><span class="percentages-text">Spam</span></div><div id="percentages-number"><span class="spam'+ provider +'"></span></div></div>'
+    //  + '<div id="opens"><div id="percentages-label"><span class="percentages-text">Opens</span></div><div id="percentages-number"><span class="opens'+ provider +'"></span></div></div>'
+    //  + '<div id="clicks"><div id="percentages-label"><span class="percentages-text">Clicks</span></div><div id="percentages-number"><span class="clicks'+ provider +'"></span></div></div></div>')
      collectData(provider)
     //  populatePercentages(provider)
    }
@@ -109,10 +109,10 @@ function appendPercentGraphs(){
  var checked = $('.providerCheckBox:checkbox:checked')
    for (var i = 0; i < checked.length; i++) {
      var provider = checked[i].parentElement.innerText.replace(/[^a-zA-Z0-9]/g, '');
-     $("#graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'
-     + '<div id="events-blocks"><div id="spam"><div id="percentages-label"><span class="percentages-text">Spam</span></div><div id="percentages-number"><span class="spam'+ provider +'"></span></div></div>'
-     + '<div id="opens"><div id="percentages-label"><span class="percentages-text">Opens</span></div><div id="percentages-number"><span class="opens'+ provider +'"></span></div></div>'
-     + '<div id="clicks"><div id="percentages-label"><span class="percentages-text">Clicks</span></div><div id="percentages-number"><span class="clicks'+ provider +'"></span></div></div></div>')
+     $("#graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
+    //  + '<div id="events-blocks"><div id="spam"><div id="percentages-label"><span class="percentages-text">Spam</span></div><div id="percentages-number"><span class="spam'+ provider +'"></span></div></div>'
+    //  + '<div id="opens"><div id="percentages-label"><span class="percentages-text">Opens</span></div><div id="percentages-number"><span class="opens'+ provider +'"></span></div></div>'
+    //  + '<div id="clicks"><div id="percentages-label"><span class="percentages-text">Clicks</span></div><div id="percentages-number"><span class="clicks'+ provider +'"></span></div></div></div>')
      collectPercentageData(provider)
     //  populatePercentages(provider)
    }
