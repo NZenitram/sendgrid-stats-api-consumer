@@ -53,6 +53,9 @@ function clearGraphs(){
           },
 
           yAxis: {
+            
+              opposite: false,
+
               labels: {
                   formatter: function () {
                     return (this.value > 0 ? '' : '') + this.value;
@@ -148,6 +151,9 @@ function populatePercentGraphs(provider, seriesOptions) {
         },
 
         yAxis: {
+
+            opposite: false,
+
             labels: {
                 formatter: function () {
                   return (this.value > 0 ? '' : '') + this.value;

@@ -30,6 +30,8 @@ function globalGraph(){
           },
 
           yAxis: {
+              opposite: false,
+
               labels: {
                   formatter: function () {
                     return (this.value > 0 ? '' : '') + this.value;
