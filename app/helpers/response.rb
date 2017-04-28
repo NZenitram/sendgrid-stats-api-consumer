@@ -12,27 +12,28 @@ module Response
   def self.parse_reponse(conn)
     response = conn.get
     providers = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
   end
 
   def self.gather_data(start_date, end_date, key, id)
     providers = response(start_date, end_date, key)
     @data = []
-    providers.each do |metric|
-      metric[:stats].each do |i|
-        provider = Provider.new(metric[:date], i[:name],
-                                i[:metrics].values[0], i[:metrics].values[1],
-                                i[:metrics].values[2], i[:metrics].values[3],
-                                i[:metrics].values[4], i[:metrics].values[5],
-                                i[:metrics].values[6], i[:metrics].values[7],
-                                i[:metrics].values[8], i[:metrics].values[9],
-                                id)
-        @data.push(provider)
+    if !providers.empty?
+      providers.each do |metric|
+        metric[:stats].each do |i|
+          provider = Provider.new(metric[:date], i[:name],
+                                  i[:metrics].values[0], i[:metrics].values[1],
+                                  i[:metrics].values[2], i[:metrics].values[3],
+                                  i[:metrics].values[4], i[:metrics].values[5],
+                                  i[:metrics].values[6], i[:metrics].values[7],
+                                  i[:metrics].values[8], i[:metrics].values[9],
+                                  id)
+          @data.push(provider)
+        end
       end
+      json = @data.to_json
+      uri = URI.parse("#{ENV['SENDGRID_STATS_DB_API']}/api/v1/providers")
+      response = Net::HTTP.post_form(uri, { "providers" => "#{json}" })
     end
-    json = @data.to_json
-    uri = URI.parse("#{ENV['SENDGRID_STATS_DB_API']}/api/v1/providers")
-    response = Net::HTTP.post_form(uri, { "providers" => "#{json}" })
   end
 
   def self.inbox_providers
