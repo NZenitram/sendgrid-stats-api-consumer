@@ -77,11 +77,21 @@ function clearGraphs(){
 
           series: seriesOptions,
 
+
           tooltip: {
             enabled: true,
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
             // valueDecimals: 2,
             // split: true,
+          },
+
+          exporting: {
+            sourceWidth: 1600,
+            sourceHeight: 400,
+            // scale: 2 (default)
+            chartOptions: {
+                subtitle: null
+              }
           }
 
       });
@@ -180,8 +190,16 @@ function populatePercentGraphs(provider, seriesOptions) {
           pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
           valueDecimals: 2,
           split: true,
-        }
+        },
 
+        exporting: {
+          sourceWidth: 1600,
+          sourceHeight: 400,
+          // scale: 2 (default)
+          chartOptions: {
+              subtitle: null
+            }
+        }
     });
   }
 
