@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var seriesOptions = [],
       seriesCounter = 0,
-      names = ['blocks', 'bounce_drops', 'bounces', 'clicks', 'deferred', 'delivered', 'invalid_emails', 'opens', 'processed', 'requests', 'spam_report_drops', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribe_drops', 'unsubscribes'];
+      names = ['blocks', 'bounces', 'clicks', 'deferred', 'delivered', 'opens', 'processed', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribes'];
 
 function globalGraph(){
   Highcharts.setOptions({
@@ -35,7 +35,10 @@ function globalGraph(){
               labels: {
                   formatter: function () {
                     return (this.value > 0 ? '' : '') + this.value;
-                  }
+                  },
+                style: {
+                  fontSize:'15px'
+                }
             },
               plotLines: [{
                   value: 0,
@@ -89,8 +92,9 @@ function globalGraph(){
 
   $('.multiple-providers').on('click', appendGraphs)
   $('#clear-button').on('click', clearGraphs)
+  $('#clear-button').on('click', clearTopGraphs)
   $('.multiple-providers-percent').on('click', appendPercentGraphs)
-  // $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
+  $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
 });
 
 function setActive(btn){
