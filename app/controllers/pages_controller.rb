@@ -1,3 +1,3 @@
 class PagesController < ApplicationController
-  before_filter :disable_nav
+  before_action :disable_nav
 end

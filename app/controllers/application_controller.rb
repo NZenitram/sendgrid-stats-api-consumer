@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
     @disable_nav = true
   end
 
-
-
   private
 
   def layout
