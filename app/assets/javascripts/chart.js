@@ -4,6 +4,11 @@ $(document).ready(function() {
       names = ['blocks', 'bounce_drops', 'bounces', 'clicks', 'deferred', 'delivered', 'invalid_emails', 'opens', 'processed', 'requests', 'spam_report_drops', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribe_drops', 'unsubscribes'];
 
 function globalGraph(){
+  Highcharts.setOptions({
+    lang: {
+      thousandsSep: ','
+    },
+  });
       Highcharts.stockChart('container', {
           title: {
             text: "Global Data"
@@ -49,7 +54,7 @@ function globalGraph(){
           tooltip: {
             enabled: true,
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
-            valueDecimals: 2,
+            // valueDecimals: 2,
             // split: true,
           }
       });
