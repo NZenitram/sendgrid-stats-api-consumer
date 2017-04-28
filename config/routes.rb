@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#welcome'
 
+  get '/register', to: 'user#register'
+
   get '/global', to: 'home#index'
   get '/providers', to: 'home#providers'
   get '/top-five', to: 'home#topfive'
