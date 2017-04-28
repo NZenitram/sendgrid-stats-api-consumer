@@ -27,6 +27,11 @@ function clearGraphs(){
    * Create the chart when all data is loaded
    */
   function populateGraphs(provider, seriesOptions) {
+    Highcharts.setOptions({
+      lang: {
+        thousandsSep: ','
+      },
+    });
       Highcharts.stockChart(provider, {
           title: {
           	text: provider
@@ -72,7 +77,7 @@ function clearGraphs(){
           tooltip: {
             enabled: true,
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
-            valueDecimals: 2,
+            // valueDecimals: 2,
             // split: true,
           }
 
@@ -168,7 +173,7 @@ function populatePercentGraphs(provider, seriesOptions) {
           enabled: true,
           pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
           valueDecimals: 2,
-          // split: true,
+          split: true,
         }
 
     });
