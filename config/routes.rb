@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'home#welcome'
-
-  get '/register', to: 'user#register'
+  devise_for :users
+  root to: 'pages#index'
 
   get '/global', to: 'home#index'
   get '/providers', to: 'home#providers'
