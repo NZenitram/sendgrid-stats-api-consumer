@@ -17,16 +17,7 @@
       </div>
     </div>
     <div class="modal-body">
-      <div class="form">
-        <%= form_tag("/dates", method: "post", class: 'client-form') do %>
-          <li class="li-form client-id"><%= text_field_tag('client-id', nil, placeholder: 'Enter API Key...') %></li>
-        <h4></h4>
-          <li class="li-form form-pad dates"><%= text_field_tag('datepicker-start', nil, placeholder: 'Start Date') %></li>
-          <li class="li-form form-pad dates"><%= text_field_tag('datepicker-end', nil, placeholder: 'End Date') %></li>
-
-        <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!", class: 'fetch-data') %></li>
-        <% end  %>
-      </div>
+      <%= render partial: 'home/form' %>
     </div>
   </div>
 </div>
