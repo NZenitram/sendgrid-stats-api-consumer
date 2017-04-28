@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: [:providers, :topfive, :index, :search]
+  before_action :authenticate_user!, only: [:providers, :topfive, :index, :search, :welcome]
   before_filter :disable_nav, only: [:welcome]
 
   def index
@@ -12,10 +12,11 @@ class HomeController < ApplicationController
 
   def search
     key = params["client-id"]
+    id = current_user.id
     start_date = DateHelper.correct_date(params["datepicker-start"])
     end_date = DateHelper.correct_date(params["datepicker-end"])
-    Response.response(start_date, end_date, key)
-    GlobalStats.get_global_data(start_date, end_date, key)
+    Response.gather_data(start_date, end_date, key, id)
+    GlobalStats.gather_data(start_date, end_date, key, id)
     redirect_to global_path
   end
 

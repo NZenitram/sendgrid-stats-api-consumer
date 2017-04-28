@@ -4,7 +4,6 @@ require "uri"
 module Response
 
   def self.response(start_date, end_date, key)
-
     conn = Faraday::Connection.new("https://api.sendgrid.com/v3/mailbox_providers/stats?start_date=#{start_date}&end_date=#{end_date}")
     conn.headers['Authorization'] = "Bearer #{key}"
     parse_reponse(conn)
@@ -13,10 +12,11 @@ module Response
   def self.parse_reponse(conn)
     response = conn.get
     providers = JSON.parse(response.body, symbolize_names: true)
-    gather_data(providers)
+    binding.pry
   end
 
-  def self.gather_data(providers)
+  def self.gather_data(start_date, end_date, key, id)
+    providers = response(start_date, end_date, key)
     @data = []
     providers.each do |metric|
       metric[:stats].each do |i|
@@ -26,7 +26,7 @@ module Response
                                 i[:metrics].values[4], i[:metrics].values[5],
                                 i[:metrics].values[6], i[:metrics].values[7],
                                 i[:metrics].values[8], i[:metrics].values[9],
-                                1)
+                                id)
         @data.push(provider)
       end
     end
