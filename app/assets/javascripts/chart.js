@@ -48,7 +48,7 @@ function globalGraph(){
 
           tooltip: {
             enabled: true,
-            pointFormat: `<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>`,
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
             valueDecimals: 2,
             // split: true,
           }
@@ -82,8 +82,8 @@ function globalGraph(){
 
   $('.multiple-providers').on('click', appendGraphs)
   $('#clear-button').on('click', clearGraphs)
-  // $('.multiple-providers-percent').on('click', appendPercentGraphs)
-  $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
+  $('.multiple-providers-percent').on('click', appendPercentGraphs)
+  // $('.multiple-providers-percent-topfive').on('click', appendPercentGraphsTopFive)
 });
 
 function setActive(btn){
