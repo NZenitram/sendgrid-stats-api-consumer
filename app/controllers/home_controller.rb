@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, only: [:providers, :topfive, :index, :search]
   before_filter :disable_nav, only: [:welcome]
 
   def index
