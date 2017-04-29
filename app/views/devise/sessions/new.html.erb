@@ -1,7 +1,6 @@
 <div id="user-background">
   <div id="inner-frame">
     <div id="login-header">
-      <p class="heading">SimpleStats</p>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
@@ -25,6 +24,10 @@
 
     </div>
       <div id="sub-heading">
+        <div class="motto">
+          <p class="motto-text">Analytics At Your Fingertips</p>
+          <p class="motto-subtext">Statistics & Visualizaton</p>
+        </div>
       </div>
       <div id="top-image" class="darken">
         <img src="/assets/charts.png" height="100%" width="100%"/>

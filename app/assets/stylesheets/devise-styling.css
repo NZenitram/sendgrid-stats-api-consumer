@@ -6,16 +6,16 @@ body {
 }
 
 #user-background {
-  height: inherit;
+  height: 100%;
   background-color: #E9ECEF;
   position: absolute;
   width: 100%;
 }
 
 #inner-frame {
+  height: 100%;
   background-color: white;
   margin: 0 auto;
-  height: inherit;
   width: 95%;
   box-shadow: 0 0 1px #888888;
 }
@@ -29,7 +29,7 @@ body {
 
 #new_user {
   padding-top: 10px;
-  margin-left: 50%;
+  margin-left: 55%;
 }
 
 #sub-heading {
@@ -79,7 +79,24 @@ body {
   transition: background-color 500ms linear;
 }
 
-.heading {
-  font-size: 16px;
-  padding-left: 55px;
+.motto {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.motto-text  {
+  margin-top: 15px;
+  font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #294661;
+}
+
+.motto-subtext  {
+  margin-top: -40px;
+  font-family: "Proxima Nova", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #294661;
 }
