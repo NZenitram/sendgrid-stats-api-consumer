@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'when a user visits root' do
+describe 'when a user visits root it can log in' do
   before(:each) do
     user = FactoryGirl.create(:user)
     user.confirmed_at = Time.now
