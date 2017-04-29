@@ -6,23 +6,80 @@ body {
 }
 
 #user-background {
-  height: 100%;
+  height: inherit;
   background-color: #E9ECEF;
   position: absolute;
-  bottom: 20px; /* Footer Height */
   width: 100%;
 }
 
 #inner-frame {
   background-color: white;
   margin: 0 auto;
-  height: 100%;
+  height: inherit;
   width: 95%;
-  bottom: 20px; /* Footer Height */
   box-shadow: 0 0 1px #888888;
 }
 
 #login-header {
-  height: 55px;
+  display: inline-flex;
+  height: 45px;
   border-bottom: 1px solid #d4dadf;
+  width: 100%
+}
+
+#new_user {
+  padding-top: 10px;
+  margin-left: 50%;
+}
+
+#sub-heading {
+  height: 155px;
+}
+
+#top-image {
+  height: 450px;
+}
+
+#user_email, #user_password {
+  width: 215px;
+  font-size: 16px;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-style: normal;
+  color: #294661;
+  border: 0;
+  border-bottom: 1px solid #d4dadf;
+  box-shadow: transparent 0 1px 0;
+}
+
+.darken {
+  -webkit-filter: grayscale;
+  -webkit-filter: brightness(65%);
+  box-shadow: 3px  #888888;
+}
+
+.field {
+  display: inline;
+}
+
+.login-button {
+  font-size: 14px;
+  margin-left: 15px;
+  border: 0;
+  background-color: #1A82E2;
+  box-shadow:none;
+  border-radius: 1px;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #294661;
+  color: white;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.heading {
+  font-size: 16px;
+  padding-left: 55px;
 }
