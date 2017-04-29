@@ -1,10 +1,11 @@
 <div id="provider-side-bar" class="inline-display">
-  <ul id="side-provider">
+  <!-- <ul id="side-provider"> -->
 
-    <% @providers.each do |provider| %>
+    <%= select_tag "providers-select", options_for_select(@providers.each_with_index.map {|name, index| [name,name]}), multiple: true, size: 40 %>
+    <!-- <% @providers.each do |provider| %>
     <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
-    <% end %>
-  </ul>
+    <% end %> -->
+  <!-- </ul> -->
 </div>
 
 <%= render partial: 'home/buttons' %>

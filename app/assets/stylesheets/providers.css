@@ -1,6 +1,11 @@
 #providers-page-header {
   text-align: left;
   height: 100px;
+  font-size: 12;
+}
+
+#providers-select {
+  font-size: 18;
 }
 
 #clear-button {
