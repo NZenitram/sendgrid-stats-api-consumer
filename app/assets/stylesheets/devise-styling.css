@@ -1,0 +1,28 @@
+body {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+#user-background {
+  height: 100%;
+  background-color: #E9ECEF;
+  position: absolute;
+  bottom: 20px; /* Footer Height */
+  width: 100%;
+}
+
+#inner-frame {
+  background-color: white;
+  margin: 0 auto;
+  height: 100%;
+  width: 95%;
+  bottom: 20px; /* Footer Height */
+  box-shadow: 0 0 1px #888888;
+}
+
+#login-header {
+  height: 55px;
+  border-bottom: 1px solid #d4dadf;
+}

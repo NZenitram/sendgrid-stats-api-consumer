@@ -1,7 +1,7 @@
 <div id="provider-side-bar" class="inline-display">
   <!-- <ul id="side-provider"> -->
 
-    <%= select_tag "providers-select", options_for_select(@providers.each_with_index.map {|name, index| [name,name]}), multiple: true, size: 40 %>
+    <%= select_tag "providers-select", options_for_select(@providers.collect {|name| [name]}), multiple: true, size: 40 %>
     <!-- <% @providers.each do |provider| %>
     <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
     <% end %> -->
