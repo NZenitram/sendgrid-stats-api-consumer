@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions'}
 
-  root to: 'pages#index'
+  root to: 'landing#index'
 
   get '/welcome', to: 'home#welcome'
   get '/global', to: 'home#index'

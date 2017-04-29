@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
   protect_from_forgery with: :exception
   layout :layout
 
@@ -9,10 +10,6 @@ class ApplicationController < ActionController::Base
   private
 
   def layout
-    # only turn it off for login pages:
     is_a?(DeviseController) ? false : "application"
-    # is_a?(Devise::RegistrationsController) ? false : "application"
-    # or turn layout off for every devise controller:
-    # devise_controller? && "application"
   end
 end
