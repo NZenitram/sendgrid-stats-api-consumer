@@ -15,7 +15,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
-gem 'rails_12factor'
 gem 'faraday'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'babel-transpiler'
@@ -37,5 +36,10 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
