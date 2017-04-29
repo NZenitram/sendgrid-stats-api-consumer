@@ -5,7 +5,11 @@
 }
 
 #providers-select {
-  font-size: 18;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-size: 18px;
+  color: #1A82E2;
+  outline: none;
+  border: 0;
 }
 
 #clear-button {

@@ -22,7 +22,7 @@ function appendPercentGraphsTopFive(){
 
 function appendTopFive(){
   clearTopGraphs()
-  var providers = $('#side-provider .prov-links')
+  var providers = $('#providers-select').find('option').not(':selected')
   for (var i = 0; i < providers.length; i++) {
     var provider = providers[i].innerText.replace(/[^a-zA-Z0-9]/g, '');
     $("#top-five-graphs").append('<div id='+ provider +' class="inline-display graph-data" style="min-width: 310px; height: 400px; margin: 0 auto"></div>')
