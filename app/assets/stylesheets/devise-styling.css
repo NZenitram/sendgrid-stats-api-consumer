@@ -27,6 +27,14 @@ body {
   width: 100%
 }
 
+#login-header.sticky {
+  z-index: 1;
+  width: inherit;
+  background-color: white;
+  position: fixed;
+  top: 0;
+}
+
 #new_user {
   padding-top: 10px;
   margin-left: 45%;

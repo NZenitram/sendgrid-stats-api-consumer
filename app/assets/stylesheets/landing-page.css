@@ -10,6 +10,14 @@
   border: 0;
 }
 
+#login-header-landing.sticky {
+  z-index: 1;
+  width: inherit;
+  background-color: white;
+  position: fixed;
+  top: 0;
+}
+
 .profile-nav-landing, .logout-nav-landing {
   margin-left: 5px;
   margin-top: 10px;
@@ -35,7 +43,8 @@
 
 .current-user-landing {
   padding-top: 13px;
-  margin-left: 10%;
+  margin: 0;
+  padding-left: 15%;
   width: 25%;
   color: #294661;
   font-family: "Proxima Nova", "Helvetica Neue", sans-serif;

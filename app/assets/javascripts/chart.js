@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+  var $window = $(window),
+   $stickyEl = $('#login-header-landing'),
+   elTop = $stickyEl.offset().top;
+
+  $window.scroll(function() {
+    $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+  });
+
   var seriesOptions = [],
       seriesCounter = 0,
       names = ['blocks', 'bounces', 'clicks', 'deferred', 'delivered', 'opens', 'processed', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribes'];
