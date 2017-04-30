@@ -10,7 +10,7 @@
           <p class="motto-text">Analytics At Your Fingertips</p>
           <p class="motto-subtext">Statistics & Visualizaton</p>
           <p class="motto-provider">To get started, select your provider:</p>
-          <select name="providers" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+          <select id="select-provider" name="providers" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
             <<option value="">Select your provider...</option>
             <option value="/welcome">SendGrid</option>
           </select>
@@ -19,5 +19,8 @@
       <div id="top-image" class="darken">
         <img src="/assets/charts.png" height="100%" width="100%"/>
       </div>
-  </div>
+      <div id="sub-footer">
+      </div>
+      <div id="footer">
+      </div>
 </div>
