@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions'}
   devise_scope :user do
     root to: "devise/sessions#new"
+    get '/landing', to: 'landing#index'
   end
 
   get '/welcome', to: 'home#welcome'

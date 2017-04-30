@@ -1,9 +1,23 @@
-<% content_for :top_content do %>
-    <div class="container">
-      <h1>Welcome!</h1>
-      <p>Register to get started.</p>
-      <p>
-        <%= link_to 'Register', new_user_registration_path%>
-      </p>
+<div id="user-background">
+  <div id="inner-frame">
+    <div id="login-header-landing">
+      <%= link_to 'Profile', edit_user_registration_path, class: 'profile-nav-landing' %>
+      <%= link_to 'Log out', destroy_user_session_path, class: 'logout-nav-landing', method: :delete %>
+      <p class="current-user-landing">Logged in as: <%= current_user.email %></p>
     </div>
-<% end %>
+      <div id="sub-heading">
+        <div class="motto">
+          <p class="motto-text">Analytics At Your Fingertips</p>
+          <p class="motto-subtext">Statistics & Visualizaton</p>
+          <p class="motto-provider">To get started, select your provider:</p>
+          <select name="providers" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+            <<option value="">Select your provider...</option>
+            <option value="/welcome">SendGrid</option>
+          </select>
+        </div>
+      </div>
+      <div id="top-image" class="darken">
+        <img src="/assets/charts.png" height="100%" width="100%"/>
+      </div>
+  </div>
+</div>

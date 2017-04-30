@@ -1,9 +1,6 @@
-class LandingController < ApplicationController
-  before_action :authenticate_user!
-
+class LandingController < Devise::SessionsController
+  
   def index
-    if !authenticate_user!.nil?
-      redirect_to(welcome_path)
-    end
+
   end
 end

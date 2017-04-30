@@ -30,7 +30,7 @@
           <%= message %>
         </div>
       <% end %>
-      <% unless devise_controller? %>
+      <!-- <% unless devise_controller? %>
         <% if user_signed_in? %>
           <%= current_user.email %>
             <%= link_to 'Profile', edit_user_registration_path %>
@@ -39,7 +39,7 @@
             <%= link_to 'Log In', new_user_session_path %>
             <%= link_to 'Sign Up', new_user_registration_path %>
           <% end %>
-        <% end %>
+        <% end %> -->
       <%= yield :top_content %>
       <% unless devise_controller? %>
         <div class="container">
