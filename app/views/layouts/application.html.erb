@@ -18,6 +18,9 @@
     <script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
     <script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
+    <script type="text/javascript">
+       var urlEndpoint = '<%= ENV['SENDGRID_STATS_DB_API'] %>'; // for integer
+    </script>
   </head>
   <body>
       <% unless devise_controller? %>

@@ -5,6 +5,11 @@
 }
 #providers-select option {
   padding: 5px;
+  width: 135px;
+  overflow:hidden;
+    white-space:pre;
+    text-overflow:ellipsis;
+    -webkit-appearance: none;
 }
 
 #providers-select {
@@ -25,7 +30,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 191px;
+  left: 221px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -48,7 +53,7 @@
   border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 165px;
+  left: 195px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -71,7 +76,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 199px;
+  left: 229px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -94,7 +99,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 195px;
+  left: 225px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -119,7 +124,7 @@
 }
 
 #provider-side-bar {
-  width: 145px;
+  width: 110px;
   height: inherit;
   position: absolute;
   border-radius: 2px;

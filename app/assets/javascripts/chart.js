@@ -75,7 +75,7 @@ function globalGraph(){
     }
 
   $.each(names, function (i, name) {
-    $.getJSON("http://localhost:3000/api/v1/global-events/" + name + '/' + user_id, function (data) {
+    $.getJSON(urlEndpoint + '/api/v1/global-events/' + name + '/' + user_id, function (data) {
       seriesOptions[i] = {
         name: name,
         data: data
