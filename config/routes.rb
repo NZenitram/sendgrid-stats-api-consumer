@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'home#welcome'
+  devise_for :users, controllers: {sessions: 'users/sessions'}
+  devise_scope :user do
+    root to: "devise/sessions#new"
+    get '/landing', to: 'landing#index'
+  end
 
+  get '/welcome', to: 'home#welcome'
   get '/global', to: 'home#index'
   get '/providers', to: 'home#providers'
   get '/top-five', to: 'home#topfive'
@@ -12,5 +17,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/user-id', to: 'home#id'
   post '/dates', to: 'home#search'
 end

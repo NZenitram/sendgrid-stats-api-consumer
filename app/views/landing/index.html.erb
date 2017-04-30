@@ -1,0 +1,35 @@
+<div id="user-background">
+  <div id="inner-frame">
+    <div id="login-header">
+      <%= link_to 'Profile', edit_user_registration_path, class: 'profile-nav-landing' %>
+      <%= link_to 'Log out', destroy_user_session_path, class: 'logout-nav-landing', method: :delete %>
+      <p class="current-user-landing">Logged in as: <%= current_user.email %></p>
+    </div>
+      <div id="sub-heading">
+        <div class="motto">
+          <p class="motto-text">Analytics At Your Fingertips</p>
+          <p class="motto-subtext">Statistics & Visualizaton</p>
+          <p class="motto-provider">To get started, select your provider:</p>
+          <select id="select-provider" name="providers" onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
+            <<option value="">Select your provider...</option>
+            <option value="/welcome">SendGrid</option>
+          </select>
+        </div>
+      </div>
+      <div id="top-image" class="darken">
+        <img src="/assets/charts.png" height="100%" width="100%"/>
+      </div>
+      <div id="sub-footer">
+      </div>
+      <div id="footer">
+      </div>
+</div>
+<script type='text/javascript'>
+  var $window = $(window)
+  $stickyEl = $('#login-header');
+  elTop = $stickyEl.offset().top;
+
+  $(window).scroll(function() {
+    $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+  });
+</script>

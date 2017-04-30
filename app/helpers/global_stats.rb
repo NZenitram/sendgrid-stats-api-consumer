@@ -11,10 +11,10 @@ class GlobalStats
   def self.parse_response(conn)
     response = conn.get
     dates_object = JSON.parse(response.body, symbolize_names: true)
-    gather_data(dates_object)
   end
 
-  def self.gather_data(dates_object)
+  def self.gather_data(start_date, end_date, key, id)
+    dates_object = get_global_data(start_date, end_date, key)
     @data = []
     dates_object.each do |date|
       metrics = date[:stats][0][:metrics]
@@ -26,8 +26,7 @@ class GlobalStats
                             metrics[:processed], metrics[:requests],
                             metrics[:spam_report_drops], metrics[:spam_reports],
                             metrics[:unique_clicks], metrics[:unique_opens],
-                            metrics[:unsubscribe_drops], metrics[:unsubscribes],
-                             1)
+                            metrics[:unsubscribe_drops], metrics[:unsubscribes], id)
     @data.push(global)
     end
     json = @data.to_json

@@ -1,4 +1,8 @@
 <script type="text/javascript">
+   var user_id = '<%= current_user.id %>'; // for integer
+</script>
+
+<script type="text/javascript">
   $(document).ready(function() {
     $('.top-five-providers').on('click', appendGraphsTopFive)
     $('#clear-top-five-button').on('click', clearTopGraphs)
@@ -8,9 +12,7 @@
 
 <div id="provider-side-bar" class="inline-display">
   <ul id="side-provider">
-    <% @providers.each do |provider| %>
-    <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
-    <% end %>
+    <%= select_tag "providers-select", options_for_select(@providers.each_with_index.map {|name, index| [name,name]}), multiple: true, size: 10 %>
   </ul>
 </div>
 

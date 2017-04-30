@@ -15,12 +15,12 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
-gem 'rails_12factor'
 gem 'faraday'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'babel-transpiler'
 gem 'newrelic_rpm'
 gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -30,11 +30,18 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'pry'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

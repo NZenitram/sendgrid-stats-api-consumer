@@ -1,6 +1,25 @@
 #providers-page-header {
   text-align: left;
   height: 100px;
+  font-size: 12;
+}
+#providers-select option {
+  padding: 5px;
+  width: 135px;
+  overflow:hidden;
+    white-space:pre;
+    text-overflow:ellipsis;
+    -webkit-appearance: none;
+}
+
+#providers-select {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #1A82E2;
+  outline: none;
+  padding-left: 15px;
+  border: 0;
+
 }
 
 #clear-button {
@@ -11,7 +30,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 161px;
+  left: 221px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -34,7 +53,7 @@
   border-radius: 2px;
   position: relative;
   top: -98px;
-  left: 165px;
+  left: 195px;
   text-align: center;
   display: inline-block;
   background-color: #1A82E2;
@@ -57,7 +76,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 169px;
+  left: 229px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -80,7 +99,7 @@
   height: 30px;
   position: relative;
   top: -98px;
-  left: 165px;
+  left: 225px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -105,7 +124,7 @@
 }
 
 #provider-side-bar {
-  width: 145px;
+  width: 110px;
   height: inherit;
   position: absolute;
   border-radius: 2px;

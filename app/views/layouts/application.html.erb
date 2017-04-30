@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SendgridStatsApiConsumer</title>
+    <title>SimpleStats</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
     <link rel="shortcut icon" href="assets/SendGrid-Logomark.ico">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -17,12 +17,24 @@
     <script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
     <script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
+    <script type="text/javascript">
+       var urlEndpoint = '<%= ENV['SENDGRID_STATS_DB_API'] %>';
+    </script>
   </head>
-
   <body>
-    <div id="main-body">
-      <%= render partial: 'layouts/navbar' unless @disable_nav %>
+      <% unless devise_controller? %>
+        <%= render partial: 'layouts/navbar' unless @disable_nav %>
+      <% end %>
+      <% flash.each do |type, message| %>
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield :top_content %>
+      <% unless devise_controller? %>
+        <div class="container">
+          <h1><%= yield :header %></h1>
+        </div>
+      <% end %>
       <%= yield %>
-    </div>
   </body>
 </html>
