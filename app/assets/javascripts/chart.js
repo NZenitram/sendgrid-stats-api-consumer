@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   var seriesOptions = [],
       seriesCounter = 0,
       names = ['blocks', 'bounces', 'clicks', 'deferred', 'delivered', 'opens', 'processed', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribes'];
@@ -74,7 +75,7 @@ function globalGraph(){
     }
 
   $.each(names, function (i, name) {
-    $.getJSON("https://still-spire-69165.herokuapp.com/api/v1/global-events/" + name, function (data) {
+    $.getJSON("http://localhost:3000/api/v1/global-events/" + name + '/' + user_id, function (data) {
       seriesOptions[i] = {
         name: name,
         data: data

@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   before_filter :disable_nav, only: [:welcome]
 
   def index
-    @providers = Response.inbox_providers
+    id = current_user.id
+    @providers = Response.inbox_providers(id)
   end
 
   def show
@@ -26,10 +27,16 @@ class HomeController < ApplicationController
   end
 
   def providers
-    @providers = Response.inbox_providers
+    id = current_user.id
+    @providers = Response.inbox_providers(id)
   end
 
   def topfive
-    @providers = TopFive.find_providers
+    id = current_user.id
+    @providers = TopFive.find_providers(id)
+  end
+
+  def id
+    render json: current_user.id
   end
 end

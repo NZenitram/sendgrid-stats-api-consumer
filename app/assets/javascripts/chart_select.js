@@ -102,7 +102,7 @@ function collectData(provider){
       seriesCounter = 0,
       names = ['delivered', 'opens', 'clicks', 'spam_reports', 'deferred', 'blocks', 'bounces', 'unique_clicks', 'unique_opens'];
   $.each(names, function (i, name) {
-    $.getJSON("http://localhost:3000/api/v1/provider-delivered/" + provider + '/' + name, function (data) {
+    $.getJSON("http://localhost:3000/api/v1/provider-delivered/" + provider + '/' + name + '/' + user_id, function (data) {
       seriesOptions[i] = {
         name: name,
         data: data
@@ -208,7 +208,7 @@ var seriesOptions = [],
     seriesCounter = 0,
     names = ['open_percentage', 'click_percentage', 'spam_report_percentage'];
 $.each(names, function (i, name) {
-  $.getJSON("http://localhost:3000/api/v1/provider-percentages/" + provider + '/' + name, function (data) {
+  $.getJSON("http://localhost:3000/api/v1/provider-percentages/" + provider + '/' + name + '/' + user_id, function (data) {
     seriesOptions[i] = {
       name: name,
       data: data

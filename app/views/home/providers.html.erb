@@ -1,11 +1,9 @@
-<div id="provider-side-bar" class="inline-display">
-  <!-- <ul id="side-provider"> -->
+<script type="text/javascript">
+   var user_id = '<%= current_user.id %>'; // for integer
+</script>
 
+<div id="provider-side-bar" class="inline-display">
     <%= select_tag "providers-select", options_for_select(@providers.collect {|name| [name]}), multiple: true, size: 40 %>
-    <!-- <% @providers.each do |provider| %>
-    <li class="prov-links"><%= p provider %><input class="providerCheckBox" type="checkbox" name="chk[]"></li>
-    <% end %> -->
-  <!-- </ul> -->
 </div>
 
 <%= render partial: 'home/buttons' %>

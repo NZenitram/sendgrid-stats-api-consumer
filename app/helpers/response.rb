@@ -36,8 +36,8 @@ module Response
     end
   end
 
-  def self.inbox_providers
-    uri = URI.parse("#{ENV['SENDGRID_STATS_DB_API']}/api/v1/providers-names")
+  def self.inbox_providers(id)
+    uri = URI.parse("#{ENV['SENDGRID_STATS_DB_API']}/api/v1/providers-names/#{id}")
     response = Net::HTTP.get(uri)
     JSON.parse(response)
   end

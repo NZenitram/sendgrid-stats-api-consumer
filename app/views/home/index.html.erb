@@ -1,12 +1,6 @@
-<div class="form">
-  <%= form_tag("/dates", method: "post", class: 'client-form') do %>
-    <li class="li-form client-id"><%= text_field_tag('client-id', nil, placeholder: 'Enter API Key...') %></li>
-    <li class="li-form form-pad"><%= text_field_tag('datepicker-start', nil, placeholder: 'Start Date') %></li>
-    <li class="li-form form-pad"><%= text_field_tag('datepicker-end', nil, placeholder: 'End Date') %></li>
-
-  <li class="li-form form-sub form-pad"><%= submit_tag("Fetch!", class: 'fetch-data') %></li>
-  <% end  %>
-</div>
+<script type="text/javascript">
+   var user_id = '<%= current_user.id %>'; // for integer
+</script>
 
 <div id="provider-side-bar" class="inline-display">
   <ul id="side-provider">

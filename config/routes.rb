@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/user-id', to: 'home#id'
   post '/dates', to: 'home#search'
 end
