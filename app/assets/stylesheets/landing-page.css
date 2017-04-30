@@ -21,30 +21,38 @@
 .profile-nav-landing, .logout-nav-landing {
   margin-left: 5px;
   margin-top: 10px;
+  margin-bottom: 10px;
   font-family: "Proxima Nova", Helvetica, sans-serif;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   background-color: #1A82E2;
   box-shadow:none;
   border-radius: 0px;
   color: white;
-  padding: 3px 6px 4px 6px;
+  padding: 3px 6px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   border: 0;
-  float: right;
+}
+
+.profile-nav-landing:hover, .logout-nav-landing:hover {
+  background-color: #294661;
+  color: white;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
 }
 
 .profile-nav-landing {
-  margin-right: 15%;
+  margin-left: 15%;
 }
 
 .current-user-landing {
   padding-top: 13px;
   margin: 0;
-  padding-left: 15%;
+  padding-left: 40%;
   width: 25%;
   color: #294661;
   font-family: "Proxima Nova", "Helvetica Neue", sans-serif;

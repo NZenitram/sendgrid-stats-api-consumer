@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
   var $window = $(window),
-   $stickyEl = $('#login-header-landing'),
-   elTop = $stickyEl.offset().top;
+      $stickyEl = $('#login-header'),
+      elTop = $stickyEl.offset().top;
 
   $window.scroll(function() {
     $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
