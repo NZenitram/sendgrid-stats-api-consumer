@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -19,7 +18,7 @@
     <script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
     <script type="text/javascript">
-       var urlEndpoint = '<%= ENV['SENDGRID_STATS_DB_API'] %>'; // for integer
+       var urlEndpoint = '<%= ENV['SENDGRID_STATS_DB_API'] %>';
     </script>
   </head>
   <body>

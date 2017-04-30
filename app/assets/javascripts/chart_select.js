@@ -220,7 +220,6 @@ $.each(names, function (i, name) {
     if (seriesCounter === names.length) {
       populatePercentGraphs(provider, seriesOptions);
     }
-
   });
 });
 }
