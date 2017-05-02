@@ -1,7 +1,3 @@
-<script type="text/javascript">
-   var user_id = '<%= current_user.id %>'; // for integer
-</script>
-
 <div id="provider-side-bar" class="inline-display">
     <%= select_tag "providers-select", options_for_select(@providers.collect {|name| [name]}), multiple: true, size: 40 %>
 </div>
@@ -10,3 +6,5 @@
 
 <div id="graphs">
 </div>
+
+<script type='text/javascript' src="/assets/providers.js"></script>
