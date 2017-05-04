@@ -5,11 +5,11 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_USER_NAME'],
-  :password => ENV['SENDGRID_API_KEY'],
-  :domain => 'www.simplymailstatistics.com',
   :address => 'smtp.sendgrid.net',
   :port => '465',
+  :domain => 'www.simplymailstatistics.com',
+  :user_name => ENV['SENDGRID_USER_NAME'],
+  :password => ENV['SENDGRID_API_KEY'],
   :authentication => :plain,
   :enable_starttls_auto => true,
   ssl:                   true,
