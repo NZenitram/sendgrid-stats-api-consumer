@@ -9,7 +9,9 @@ ActionMailer::Base.smtp_settings = {
   :password => ENV['SENDGRID_API_KEY'],
   :domain => 'www.simplymailstatistics.com',
   :address => 'smtp.sendgrid.net',
-  :port => 465,
+  :port => '465',
   :authentication => :plain,
-  :enable_starttls_auto => true
+  :enable_starttls_auto => true,
+  ssl:                   true,
+  tls:                   true
 }
