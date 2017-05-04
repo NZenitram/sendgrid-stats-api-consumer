@@ -26,15 +26,3 @@ module SendgridStatsApiConsumer
     end
   end
 end
-
-Rails.application.configure do
-
-  config.action_mailer.perform_deliveries = true
-
-  config.action_mailer.default_url_options = { host: 'ec2-52-52-82-101.us-west-1.compute.amazonaws.com' }
-
-  config.action_mailer.delivery_method = :smtp
-
-  config.active_job.queue_adapter = :delayed_job
-
-end
