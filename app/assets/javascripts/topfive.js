@@ -3,7 +3,6 @@ $(document).ready(function() {
 
 $('.top-five-providers').on('click', appendGraphsTopFive)
 $('#clear-top-five-button').on('click', clearTopGraphs)
-appendTopFive()
 
 function appendTopFive(){
   clearTopGraphs()
