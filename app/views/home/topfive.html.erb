@@ -1,15 +1,3 @@
-<script type="text/javascript">
-   var user_id = '<%= current_user.id %>'; // for integer
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.top-five-providers').on('click', appendGraphsTopFive)
-    $('#clear-top-five-button').on('click', clearTopGraphs)
-    appendTopFive()
-  });
-</script>
-
 <div id="provider-side-bar" class="inline-display">
   <ul id="side-provider">
     <%= select_tag "providers-select", options_for_select(@providers.each_with_index.map {|name, index| [name,name]}), multiple: true, size: 10 %>
@@ -20,3 +8,5 @@
 
 <div id="top-five-graphs">
 </div>
+
+<script type="text/javascript" src="/assets/topfive.js"></script>

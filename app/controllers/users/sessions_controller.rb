@@ -14,7 +14,9 @@ class Users::SessionsController < Devise::SessionsController
   # DELETE /resource/sign_out
   def destroy
     id = current_user.id
-    Destroy.destroy_user_data(id)
+    if id != 18
+      Destroy.destroy_user_data(id)
+    end
     super
   end
 

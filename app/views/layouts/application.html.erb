@@ -20,6 +20,10 @@
     <script type="text/javascript">
        var urlEndpoint = '<%= ENV['SENDGRID_STATS_DB_API'] %>';
     </script>
+    <% if current_user %>
+      <script type="text/javascript">  var user_id = '<%= current_user.id %>'
+      </script>
+    <% end  %>
   </head>
   <body>
       <% unless devise_controller? %>

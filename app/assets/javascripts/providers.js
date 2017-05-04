@@ -1,5 +1,5 @@
 var $window = $(window)
-$stickyEl = $('#login-header');
+$stickyEl = $('#graphs-header');
 elTop = $stickyEl.offset().top;
 
 $(window).scroll(function() {

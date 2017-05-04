@@ -18,6 +18,16 @@
   top: 0;
 }
 
+#graphs-header.sticky {
+  z-index: 1;
+  margin-top: 0;
+  border-top: 0;
+  width: 80%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+}
+
 .profile-nav-landing, .logout-nav-landing {
   margin-left: 5px;
   margin-top: 10px;
