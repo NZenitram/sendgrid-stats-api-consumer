@@ -2,14 +2,11 @@ $(document).ready(function() {
 page = $('body')[0].baseURI
   switch (page) {
     case 'http://localhost:3001/top-five.html':
-      appendTopFive()
-      break;
     case "https://www.simplymailstatistics.com/top-five.html":
       appendTopFive()
       break;
-    default:
-  }
-
+  case "http://localhost:3001/global.html":
+  case "https://www.simplymailstatistics.com/global.html":
   var seriesOptions = [],
       seriesCounter = 0,
       names = ['blocks', 'bounces', 'clicks', 'deferred', 'delivered', 'opens', 'processed', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribes'];
@@ -100,6 +97,8 @@ function globalGraph(){
 
     });
   });
+  break
+}
 
   $(function() {
     $("#datepicker-start").datepicker();
