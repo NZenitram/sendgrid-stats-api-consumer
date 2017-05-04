@@ -19,7 +19,6 @@ gem 'figaro'
 gem 'faraday'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'babel-transpiler'
-gem 'newrelic_rpm'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'delayed_job_active_record'
 
