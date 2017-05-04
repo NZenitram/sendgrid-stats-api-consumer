@@ -1,6 +1,14 @@
 $(document).ready(function() {
 });
 
+var $window = $(window)
+$stickyEl = $('#graphs-header');
+elTop = $stickyEl.offset().top;
+
+$(window).scroll(function() {
+  $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+});
+
 $('.top-five-providers').on('click', appendGraphsTopFive)
 $('#clear-top-five-button').on('click', clearTopGraphs)
 appendTopFive()
