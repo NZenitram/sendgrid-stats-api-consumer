@@ -1,5 +1,14 @@
 $(document).ready(function() {
-  appendTopFive()
+page = $('body')[0].baseURI
+  switch (page) {
+    case 'http://localhost:3001/top-five.html':
+      appendTopFive()
+      break;
+    case "https://www.simplymailstatistics.com/top-five.html":
+      appendTopFive()
+      break;
+    default:
+  }
 
   var seriesOptions = [],
       seriesCounter = 0,
