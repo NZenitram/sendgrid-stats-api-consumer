@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  appendTopFive()
 
   var seriesOptions = [],
       seriesCounter = 0,
