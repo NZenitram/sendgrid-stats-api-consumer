@@ -26,3 +26,15 @@ module SendgridStatsApiConsumer
     end
   end
 end
+
+Rails.application.configure do
+
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.default_url_options = { host: 'simplymailstatistics.com' }
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.active_job.queue_adapter = :delayed_job
+
+end
