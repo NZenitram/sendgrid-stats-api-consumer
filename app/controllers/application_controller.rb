@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    landing_path
+    if current_user.id == 18
+      global_path
+    else
+      landing_path
+    end
   end
 
 end
