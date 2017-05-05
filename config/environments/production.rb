@@ -94,8 +94,8 @@ Rails.application.configure do
 end
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_USER_NAME'],
-  :password => ENV['SENDGRID_API_KEY'],
+  :user_name => ENV["sendgrid_username"],
+  :password => ENV["sendgrid_apikey"],
   :address => 'smtp.sendgrid.net',
   :port => 465,
   :domain => 'www.simplymailstatistics.com',
