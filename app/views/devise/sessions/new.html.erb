@@ -18,7 +18,7 @@
           <% end -%>
 
           <div class="field">
-            <%= f.submit "Log in", class: "login-button" %> or <%= link_to "Sign up", new_registration_path(resource_name), class: "sign-up-button"%>
+            <%= f.submit "Log in", class: "login-button" %> or <a href="#" class="sign-up-button" id="sign-up-button">Sign Up</a>
           </div>
         <% end %>
     </div>
@@ -36,6 +36,20 @@
       <div id="footer">
       </div>
       <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content" class="modal">
+    <div class="modal-header-modal">
+      <span class="close">&times;</span>
+      <div id=welcome-header-modal>
+        <h1><img class="sg-logo" src="" /><p id="header-a">Welcome To SimplyMailStatistics</p></h1>
+      </div>
+    </div>
+    <div class="modal-body">
+      <%= render partial: 'home/new_user' %>
+    </div>
   </div>
 </div>
 

@@ -57,7 +57,7 @@ body {
   height: 450px;
 }
 
-#user_email, #user_password {
+#user_email, #user_password, #user_password_confirmation {
   width: 215px;
   font-size: 16px;
   font-family: "Proxima Nova", Helvetica, sans-serif;

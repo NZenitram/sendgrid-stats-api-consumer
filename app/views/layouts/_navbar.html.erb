@@ -7,18 +7,3 @@
   <%= link_to 'Profile', edit_user_registration_path, class: 'profile-nav' %>
   <%= link_to 'Log out', destroy_user_session_path, class: 'logout-nav', method: :delete %>
 </ul>
-
-<!-- <button id="change-client"></button> -->
-<div id="myModal" class="modal">
-  <div class="modal-content" class="modal">
-    <div class="modal-header-modal">
-      <span class="close">&times;</span>
-      <div id=welcome-header-modal>
-        <h1><img class="sg-logo" src="" /><p id="header-a">Welcome To SendGrid Stats</p></h1>
-      </div>
-    </div>
-    <div class="modal-body">
-      <%= render partial: 'home/form' %>
-    </div>
-  </div>
-</div>

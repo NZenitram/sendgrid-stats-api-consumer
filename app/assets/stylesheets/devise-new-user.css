@@ -1,0 +1,10 @@
+#new_user_signin_modal {
+  display: inline-flex;
+  margin-left: 110px;
+}
+
+#user-links {
+  font-family: "Proxima Nova", Helvetica, sans-serif;
+  margin-left: 25%;
+  width: 550px;
+}
