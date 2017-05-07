@@ -1,4 +1,7 @@
 $(document).ready(function() {
+});
+
+function buildModal(){
 // Get the modal
   var modal = document.getElementById('myModal');
 
@@ -23,4 +26,4 @@ $(document).ready(function() {
           modal.style.display = "none";
       }
   }
-});
+}
