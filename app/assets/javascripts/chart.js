@@ -2,7 +2,9 @@ $(document).ready(function() {
 page = $('body')[0].baseURI
   switch (page) {
     case "http://localhost:3001/":
+    case "http://localhost:3001/users/sign_in#":
     case "https://www.simplymailstatistics.com":
+    case "https://www.simplymailstatistics.com/users/sign_in":
       buildModal()
       break;
     case 'http://localhost:3001/top-five.html':
@@ -11,7 +13,7 @@ page = $('body')[0].baseURI
       break;
     case "http://localhost:3001/global.html":
     case "https://www.simplymailstatistics.com/global.html":
-    
+
   var seriesOptions = [],
       seriesCounter = 0,
       names = ['blocks', 'bounces', 'clicks', 'deferred', 'delivered', 'opens', 'processed', 'spam_reports', 'unique_clicks', 'unique_opens', 'unsubscribes'];
