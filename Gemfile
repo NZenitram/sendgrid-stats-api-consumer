@@ -21,6 +21,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'babel-transpiler'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 group :development, :test do
   gem 'byebug', platform: :mri
