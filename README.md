@@ -1,8 +1,8 @@
 # SendGrid Consumer API Visualization
 
-![Landing](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+Landing+Cal.png)
-![Providers](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+Prov+2.0.png)
-![Change Client](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+ChangeClient+Modal.png)
+![Landing](https://s3-us-west-1.amazonaws.com/sg-stats-assets/SimplyMailStatisticsSignUp.png)
+![Providers](https://s3-us-west-1.amazonaws.com/sg-stats-assets/SimplyMailStatisticsProviders.png)
+![Change Client](https://s3-us-west-1.amazonaws.com/github-readme-iamges/SG+Landing+Cal.png)
 
 
 
