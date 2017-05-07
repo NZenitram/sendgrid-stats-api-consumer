@@ -2,9 +2,7 @@ $(document).ready(function() {
 page = $('body')[0].baseURI
   switch (page) {
     case "http://localhost:3001/":
-    case "http://localhost:3001/users/sign_in#":
     case "https://www.simplymailstatistics.com":
-    case "https://www.simplymailstatistics.com/users/sign_in":
       buildModal()
       break;
     case 'http://localhost:3001/top-five.html':
