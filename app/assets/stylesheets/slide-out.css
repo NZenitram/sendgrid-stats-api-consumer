@@ -10,10 +10,10 @@
 }
 #home-hero-pop{
     background-color: #ffffff;
-    opacity:0.8;
+    opacity:1;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
-    font: 16px Helvetica,Arial,sans-serif;
+    font-family: "Proxima Nova", Helvetica, sans-serif;
     font-weight: bold;
     color: #6d6e70;
     text-align: left;
@@ -32,5 +32,9 @@
 }
 
 #home-heroImage:hover #home-hero-pop{
-    right: 580px;
+    right: 540px;
+}
+
+.icon-color {
+  color: #1A82E2;
 }
