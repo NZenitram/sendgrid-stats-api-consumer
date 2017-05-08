@@ -6,13 +6,11 @@
 
 
 
-The SendGrid API Visualization application allows a SendGrid client to enter their API key into the Client ID field, select a date range, and see a visual representation of the email events that occurred on a per provider basis.
+This web application gives a SendGrid Email customer the ability to visualize their email statistical data for a given date range using Highcharts visualization. A user signs up using an email address, confirms sign up via email, then logs in. After log in the user is sent to a landing page to select their email service provider. The only provider currently available is SendGrid. Select SendGrid from the drop down, and the user is redirected to a form that asks for their stats API key (Any key will work but it is recommended that you create a stats only API key for your SendGrid account, API keys are not stored in the DB, the key is used to make the API call to SendGrid, the data is objectified, and sent via API to the backend application that processes and stores the information to a PostgresDB running on AWS). The user can then click through the 'Global', 'Providers' or 'Top Five' links at the top of the page to display the data they wish to view. Single or multiple providers may be selected from the dynamically generated providers list on the providers view. The user can then select if they wish to view raw numerical data, or a subset of percentage data that is generated based on their total deliveries. All user data is currently destroyed on log out. So re-entering your API key is required after each log out. This was done to protect user data and limit the amount of storage required to run the application.
 
 ## Getting Started
 
-To use the application, simply clone this repo onto your local machine and follow the steps below. The application is not currently deployed to a web server, but will run the same locally when the proper environment is configured.
-
-The application does not store any user data other than temporary CSV files that are created when the API requests are made. These files do not carry any identifying information about the client, SendGrid or recipients.
+Visit https://www.simplymailstatistics.com/ and register your account. Please have you SendGrid ReadOnly API key ready. After sign up, confirm your email address through the confirmation email that is sent to your inbox. After confirmation, you can log in and will be redirected to the landing page where you may select your Email provider. As stated above, SendGrid is the only provider currently available. Select SendGrid from the dropdown and you will be asked for your API key and to select a date range. Enter in the fields and click fetch!
 
 ### Prerequisites
 
