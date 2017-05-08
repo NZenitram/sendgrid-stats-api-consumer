@@ -10,7 +10,7 @@ This web application gives a SendGrid Email customer the ability to visualize th
 
 ## Getting Started
 
-Visit https://www.simplymailstatistics.com/ and register your account. Please have you SendGrid ReadOnly API key ready. After sign up, confirm your email address through the confirmation email that is sent to your inbox. After confirmation, you can log in and will be redirected to the landing page where you may select your Email provider. As stated above, SendGrid is the only provider currently available. Select SendGrid from the dropdown and you will be asked for your API key and to select a date range. Enter in the fields and click fetch!
+Visit https://www.simplymailstatistics.com/ and register your account. Please have your SendGrid ReadOnly API key ready. After sign up, confirm your email address through the confirmation email that is sent to your inbox. After confirmation, you can log in and will be redirected to the landing page where you may select your Email provider. As stated above, SendGrid is the only provider currently available. Select SendGrid from the dropdown and you will be asked for your API key and to select a date range. Enter in the fields and click fetch!
 
 ### Prerequisites
 
