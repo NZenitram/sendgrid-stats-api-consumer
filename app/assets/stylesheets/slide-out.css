@@ -1,0 +1,36 @@
+#home-heroImage{
+    padding: 0px;
+    margin: 0px auto;
+    margin-right: 0px;
+    width: 90%;
+    height: 525px;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+#home-hero-pop{
+    background-color: #ffffff;
+    opacity:0.8;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    font: 16px Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    color: #6d6e70;
+    text-align: left;
+    padding: 10px;
+    position: absolute;
+    right: -480px;
+    top: 0px;
+    height: 505px;
+    width: 460px;
+    z-index: 1;
+    -webkit-transition: right 0.5s ease-in-out;
+    -moz-transition: right 0.5s ease-in-out;
+    -o-transition: right 0.5s ease-in-out;
+    -ms-transition: right 0.5s ease-in-out;
+    transition: right 0.5s ease-in-out;
+}
+
+#home-heroImage:hover #home-hero-pop{
+    right: 580px;
+}

@@ -13,6 +13,9 @@ page = $('body')[0].baseURI
       break;
     case "http://localhost:3001/global.html":
     case "https://www.simplymailstatistics.com/global.html":
+      globalGraph()
+      break
+    }
 
   var seriesOptions = [],
       seriesCounter = 0,
@@ -104,8 +107,6 @@ page = $('body')[0].baseURI
 
       });
     });
-    break
-  }
 
   $(function() {
     $("#datepicker-start").datepicker();
